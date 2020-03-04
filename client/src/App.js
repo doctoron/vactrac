@@ -14,6 +14,9 @@ import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
+
+
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 if (localStorage.token) {

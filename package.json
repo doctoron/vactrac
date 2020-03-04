@@ -16,12 +16,17 @@
 	"license": "ISC",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
+		"bootstrap": "^4.4.1",
 		"config": "^3.2.6",
 		"express": "^4.17.1",
 		"express-validator": "^6.4.0",
 		"jsonwebtoken": "^8.5.1",
 		"mongodb": "^3.5.3",
-		"mongoose": "^5.9.1"
+		"mongoose": "^5.9.1",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
+		"reactstrap": "^8.4.1",
+		"reat": "0.0.1-security"
 	},
 	"devDependencies": {
 		"concurrently": "^5.1.0",
