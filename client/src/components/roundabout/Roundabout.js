@@ -103,6 +103,7 @@ class roundAbout extends Component {
                 max-width: 100%;
                 height: 500px;
                 background: black;
+                opacity: 0.9;
               }
               .carousel-caption h3 {
                 color: #20c997;
