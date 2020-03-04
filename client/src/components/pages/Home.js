@@ -17,7 +17,7 @@ const Home = () => {
     <Fragment>
       <Roundabout />
 
-      {/* <div className='grid-2'>
+      <div className='grid-2'>
         <div>
           <ContactForm />
         </div>
@@ -25,7 +25,7 @@ const Home = () => {
           <ContactFilter />
           <Contacts />
         </div>
-      </div> */}
+      </div>
     </Fragment>
   );
 };

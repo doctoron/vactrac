@@ -3,7 +3,7 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  // CarouselIndicators,
+  CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
 
@@ -116,11 +116,11 @@ class roundAbout extends Component {
           next={this.next}
           previous={this.previous}
         >
-          {/* <CarouselIndicators
+          <CarouselIndicators
             items={items}
             activeIndex={activeIndex}
             onClickHandler={this.goToIndex}
-          /> */}
+          />
           {slides}
           <CarouselControl direction="prev"
             directionText="Previous" onClickHandler={this.previous}
