@@ -19,11 +19,11 @@ const Home = () => {
 
       <div className='grid-2'>
         <div>
-          <ContactForm />
+          {/* <ContactForm /> */}
         </div>
         <div>
-          <ContactFilter />
-          <Contacts />
+          {/* <ContactFilter /> */}
+          {/* <Contacts /> */}
         </div>
       </div>
     </Fragment>
