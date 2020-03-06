@@ -7,9 +7,11 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-import image1 from "../../img/puzzle1.jpg"; // Tell Webpack this JS file uses this image
-import image2 from '../../img/VT-Logo.jpg';
-import image3 from '../../img/adult-celebrate.jpg';
+import image1 from '../../img/roundAbout-Logo.jpg';
+import image2 from '../../img/puzzle1.jpg';
+import image3 from '../../components/video/Video';
+// import video from '../../components/video/Video';
+// import image3 from '../../img/adult-celebrate.jpg';
 
 const items = [
   {
@@ -27,10 +29,9 @@ const items = [
   },
   {
     src: image3,
-    altText: 'A Reason To Celebrate',
-    caption: '#vaccineswork',
-    captionText: ''
-
+    //   altText: 'A Reason To Celebrate',
+    //   caption: '#vaccineswork',
+    //   captionText: ''
   }
 ];
 
@@ -100,8 +101,8 @@ class roundAbout extends Component {
         <style>
           {
             `.custom-tag {
-                max-width: 100%;
-                height: 500px;
+                vh: 100;
+                vh: 100;
                 background: black;
                 opacity: 0.9;
               }

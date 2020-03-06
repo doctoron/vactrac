@@ -1,4 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react';
+import { Button } from 'reactstrap';
+
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
@@ -23,15 +25,36 @@ export const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li>Hello {user && user.name}</li>
+      <li><Button color="success"
+      >
+        Hello {user && user.name}
+      </Button></li>
       <li>
-        <Link to="/oeas">Resources</Link>
+        <Button color="primary">
+          <Link to="/oeas"
+            style={{ textDecoration: 'none' }}
+          >
+            Resources
+            </Link>
+        </Button>
       </li>
       <li>
-        <Link to="/vacrecs">Vaccinations</Link>
+        <Button color="primary">
+          <Link to="/vacrecs"
+            style={{ textDecoration: 'none' }}
+          >
+            Vaccinations
+          </Link>
+        </Button>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <Button color="primary">
+          <Link to="/blog"
+            style={{ textDecoration: 'none' }}
+          >
+            Blog
+            </Link>
+        </Button>
       </li>
 
       <li>
@@ -40,22 +63,40 @@ export const Navbar = ({ title, icon }) => {
           <span className="hide-sm">Logout</span>
         </a>
       </li>
-    </Fragment>
+    </Fragment >
   );
 
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/oeas">Resources</Link>
+        <Button color="primary">
+          <Link to="/oeas"
+            style={{ textDecoration: 'none' }}
+          >
+            Resources
+          </Link>
+        </Button>
       </li>
       <li>
-        <Link to="/register">Register</Link>
+        <Button color="primary">
+          <Link to="/register"
+            style={{ textDecoration: 'none' }}
+          >
+            Register
+          </Link>
+        </Button>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Button color="primary">
+          <Link to="/login"
+            style={{ textDecoration: 'none' }}
+          >
+            Login
+          </Link>
+        </Button>
       </li>
       {/* <li>
-        <Link to="/about">About</Link>
+        <Button color="primary"><Link to="/about">About</Link></Button>
       </li> */}
     </Fragment>
   );
@@ -63,7 +104,9 @@ export const Navbar = ({ title, icon }) => {
   return (
     <div className="navbar bg-primary">
       <h1>
-        <Link to='/'>
+        <Link to='/'
+          style={{ textDecoration: 'none' }}
+        >
           <i className={icon} /> {title}
         </Link>
       </h1>

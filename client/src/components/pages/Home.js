@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, Fragment } from 'react';
-import Contacts from '../contacts/Contacts';
-import ContactForm from '../contacts/ContactForm';
-import ContactFilter from '../contacts/ContactFilter';
+import { Container, Row, Col } from 'reactstrap';
+import Cards from '../../components/cards/Cards';
 import AuthContext from '../../context/auth/authContext';
 import Roundabout from '../../components/roundabout/Roundabout';
 
@@ -16,16 +15,13 @@ const Home = () => {
   return (
     <Fragment>
       <Roundabout />
-
-      <div className='grid-2'>
-        <div>
-          {/* <ContactForm /> */}
-        </div>
-        <div>
-          {/* <ContactFilter /> */}
-          {/* <Contacts /> */}
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Col></Col>
+          <Col sm="10"><Cards /></Col>
+          <Col></Col>
+        </Row>
+      </Container>
     </Fragment>
   );
 };

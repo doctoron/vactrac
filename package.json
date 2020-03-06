@@ -25,6 +25,7 @@
 		"mongoose": "^5.9.1",
 		"react": "^16.13.0",
 		"react-dom": "^16.13.0",
+		"react-youtube": "^7.9.0",
 		"reactstrap": "^8.4.1",
 		"reat": "0.0.1-security"
 	},
