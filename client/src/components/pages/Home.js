@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, Fragment } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Card, CardFooter } from 'reactstrap';
 import Cards from '../../components/cards/Cards';
 import AuthContext from '../../context/auth/authContext';
 import Roundabout from '../../components/roundabout/Roundabout';
@@ -14,11 +14,19 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Roundabout />
       <Container>
+        <Roundabout />
         <Row>
           <Col></Col>
           <Col sm="10"><Cards /></Col>
+          <Col></Col>
+        </Row>
+      </Container>
+
+      <Container className="main-footer">
+        <Row>
+          <Col></Col>
+          <Col sm="10"><p className="p-c">Antonio's Magnet &copy; 2020, All Rights Reserved</p></Col>
           <Col></Col>
         </Row>
       </Container>

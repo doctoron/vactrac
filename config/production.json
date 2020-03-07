@@ -1,0 +1,5 @@
+{
+	"mongoURI": "mongodb+srv://truroot:wsZjte_4Jx8QRz@cluster0-imkfh.mongodb.net/vactrac?retryWrites=true&w=majority",
+	"jwtSecret": "secret",
+	"key": "AIzaSyASgO8qw9-xS8drlQZTT-ef1GeQW1d_wUo"
+}

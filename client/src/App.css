@@ -149,6 +149,10 @@ img {
   padding: 3rem;
 }
 
+.p-c {
+  text-align: center;
+}
+
 .py {
   padding: 0.5rem 0;
 }
@@ -400,6 +404,15 @@ table th {
 
 .navbar .welcome span {
   margin-right: 0.6rem;
+}
+
+/* Footer */
+
+#main-footer {
+  position: sticky;
+  background: #612f1b;
+  color: #fff;
+  padding: 20px;
 }
 
 /* Animation (Add After) */
