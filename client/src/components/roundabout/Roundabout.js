@@ -7,11 +7,9 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-import image1 from '../../img/roundAbout-Logo.jpg';
-import image2 from '../../img/puzzle1.jpg';
-import image3 from '../../components/video/Video';
-// import video from '../../components/video/Video';
-// import image3 from '../../img/adult-celebrate.jpg';
+import image1 from '../../img/puzzle1.jpg';
+import image2 from '../../img/roundAbout-Logo.jpg';
+import yt_iframe from '../../components/video/Video';
 
 const items = [
   {
@@ -22,16 +20,16 @@ const items = [
   },
   {
     src: image2,
-    altText: 'VackTRACK Logo',
+    altText: 'VacTRACK Logo',
     caption: '',
     captionText: '#vaccineswork'
 
   },
   {
-    src: image3,
-    //   altText: 'A Reason To Celebrate',
-    //   caption: '#vaccineswork',
-    //   captionText: ''
+    src: yt_iframe,
+    altText: 'Handwashing 101',
+    caption: '#Handwashing101',
+    captionText: ''
   }
 ];
 
@@ -87,7 +85,6 @@ class roundAbout extends Component {
         >
           <img src={item.src} alt={item.altText} />
           <CarouselCaption
-            // className="text-danger"
             className="carousel-caption h3"
             captionText={item.captionText}
             captionHeader={item.caption}
