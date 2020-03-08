@@ -1,5 +1,7 @@
 {
 	"mongoURI": "mongodb+srv://truroot:wsZjte_4Jx8QRz@cluster0-imkfh.mongodb.net/vactrac?retryWrites=true&w=majority",
 	"jwtSecret": "secret",
-	"key": "AIzaSyASgO8qw9-xS8drlQZTT-ef1GeQW1d_wUo"
+	"key": "AIzaSyASgO8qw9-xS8drlQZTT-ef1GeQW1d_wUo",
+	"AWS_ACCESS_KEY_ID": "AKIAIIZSOYQWVNM2ZYFA",
+	"AWS_SECRET_ACCESS_KEY": "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"
 }

@@ -12,10 +12,11 @@ const Video = () => {
           width="560"
           height="315"
           src="https://www.youtube.com/embed/LWmok9avzr4"
-          frameborder="0"
+          samesite="None"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           title="CDC Handwashing Video"
-          allowfullscreen="true">
+          allowFullScreen={true}>
         </iframe>
       </Container>
     </Fragment>
