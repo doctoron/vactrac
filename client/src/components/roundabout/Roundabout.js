@@ -11,6 +11,7 @@ import image1 from '../../img/roundAbout-Logo.jpg';
 import image2 from '../../img/puzzle1.jpg';
 import video from '../../components/video/Video';
 
+
 const items = [
   {
     src: image1,
@@ -21,6 +22,7 @@ const items = [
   },
   {
     src: image2,
+
     altText: 'VackTRACK Logo',
     caption: '#vaccineswork',
     captionText: '',
