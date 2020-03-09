@@ -2,9 +2,9 @@
 
 > This is a full stack MERN PVR (Personal Vaccination Record) manager with React hooks, context & JWT authentication. It was modeled from the Udemy React-Front-To-Back course to review my final project at the University of Central Florida's Full Stack Web Developer Program.
 
-The the full MERN app can be found https://vactrac.herokuapp.com/
-The vactrack.org domain is currently pointing to https://vactrack.netlify.com/
-The API can be found https://github.com/doctoron/vactrack_api) with documented endpoints.
+- The the full MERN app can be found https://vactrac.herokuapp.com/
+- The vactrack.org domain is currently pointing to https://vactrack.netlify.com/
+- The API can be found https://github.com/doctoron/vactrack_api) with documented endpoints.
 
 ## Usage
 
