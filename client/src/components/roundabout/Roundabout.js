@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, useState } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -7,97 +7,80 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-import image1 from '../../img/puzzle1.jpg';
-import image2 from '../../img/roundAbout-Logo.jpg';
-import yt_iframe from '../../components/video/Video';
+import image1 from '../../img/roundAbout-Logo.jpg';
+import image2 from '../../img/puzzle1.jpg';
+import video from '../../components/video/Video';
+
 
 const items = [
   {
     src: image1,
     altText: 'Immunization Puzzle',
     caption: '#vaccineswork',
-    captionText: ''
+    captionText: '',
+    key: '1'
   },
   {
     src: image2,
-    altText: 'VacTRACK Logo',
-    caption: '',
-    captionText: '#vaccineswork'
+
+    altText: 'VackTRACK Logo',
+    caption: '#vaccineswork',
+    captionText: '',
+    key: '2'
 
   },
   {
-    src: yt_iframe,
-    altText: 'Handwashing 101',
-    caption: '#Handwashing101',
-    captionText: ''
+    src: video,
+    altText: '',
+    caption: '',
+    captionText: '',
+    key: '3'
   }
 ];
 
-class roundAbout extends Component {
-  constructor (props) {
-    super(props);
-    this.state = { activeIndex: 0 };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
+const RoundAbout = (props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
   }
 
-  onExiting () {
-    this.animating = true;
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
   }
 
-  onExited () {
-    this.animating = false;
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
   }
 
-  next () {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous () {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  goToIndex (newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-
-  render () {
-    const { activeIndex } = this.state;
-
-    const slides = items.map(item => {
-      return (
-        <CarouselItem
-          className="custom-tag"
-          tag="div"
-          key={item.src}
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-        >
-          <img src={item.src} alt={item.altText} />
-          <CarouselCaption
-            className="carousel-caption h3"
-            captionText={item.captionText}
-            captionHeader={item.caption}
-          />
-        </CarouselItem>
-      );
-    });
-
+  const slides = items.map((item) => {
     return (
-      <div>
-        <style>
-          {
-            `.custom-tag {
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
+        <img src={item.src} alt={item.altText} />
+        <CarouselCaption
+          captionText={item.captionText}
+          className="carousel-caption h3"
+          captionHeader={item.caption}
+        />
+      </CarouselItem>
+    );
+  });
+
+  return (
+    <Fragment>
+      <style>
+        {
+          `.custom-tag {
                 vh: 100;
                 vh: 100;
                 background: black;
@@ -108,30 +91,29 @@ class roundAbout extends Component {
                 text-shadow: 2px 2px black;
               }
               `
-          }
-        </style>
-        <Carousel
+        }
+      </style>
+      <Carousel
+        activeIndex={activeIndex}
+        next={next}
+        previous={previous}
+      >
+        <CarouselIndicators
+          items={items}
           activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
-        >
-          <CarouselIndicators
-            items={items}
-            activeIndex={activeIndex}
-            onClickHandler={this.goToIndex}
-          />
-          {slides}
-          <CarouselControl direction="prev"
-            directionText="Previous" onClickHandler={this.previous}
-          />
-          <CarouselControl
-            direction="next"
-            directionText="Next" onClickHandler={this.next}
-          />
-        </Carousel>
-      </div>
-    );
-  }
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl direction="prev"
+          directionText="Previous" onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next" onClickHandler={next}
+        />
+      </Carousel>
+    </Fragment>
+  );
 }
 
-export default roundAbout;
+export default RoundAbout;
