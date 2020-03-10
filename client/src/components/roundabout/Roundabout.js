@@ -11,6 +11,7 @@ import image1 from '../../img/roundAbout-Logo.jpg';
 import image2 from '../../img/puzzle1.jpg';
 import video from '../../components/video/Video';
 
+
 const items = [
   {
     src: image1,
@@ -36,7 +37,9 @@ const items = [
   }
 ];
 
-const RoundAbout = (props) => {
+console.log('src definition:', typeof (src));
+
+const RoundAbout = (prop) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -66,9 +69,8 @@ const RoundAbout = (props) => {
       >
         <img src={item.src} alt={item.altText} />
         <CarouselCaption
-          captionText={item.captionText}
-          className="carousel-caption h3"
-          captionHeader={item.caption}
+          captionHeader={item.caption || item.captionText}
+          captionText=""
         />
       </CarouselItem>
     );

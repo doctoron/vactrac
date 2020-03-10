@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import Contacts from '../contacts/Contacts';
-import ContactForm from '../contacts/ContactForm';
-import ContactFilter from '../contacts/ContactFilter';
+import Vaccinations from '../vaccinations/Vaccinations';
+import VacForm from '../vaccinations/VacForm';
+import VacFilter from '../vaccinations/VacFilter';
 
 
 const VacRecords = () => {
@@ -11,11 +11,11 @@ const VacRecords = () => {
         <h1 className="py-1">Vaccination Records</h1>
       </div>
       <div className='grid-2'>
-        <ContactForm />
+        <VacForm />
       </div>
       <div>
-        <ContactFilter />
-        <Contacts />
+        <VacFilter />
+        <Vaccinations />
       </div>
     </Fragment>
 

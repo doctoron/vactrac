@@ -30,6 +30,7 @@ const App = () => {
         <AlertState>
           <Router>
             <Fragment>
+              {/* <NavStrap /> */}
               <Navbar />
               <div className="container">
                 <Alerts />
