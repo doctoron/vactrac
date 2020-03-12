@@ -1,110 +1,132 @@
 import React, { useState, useContext, useEffect } from 'react';
-import ContactContext from '../../context/contact/contactContext';
+import VaccineContext from '../../context/vaccinations/vaccineContext';
 
-const ContactForm = () => {
-  const contactContext = useContext(ContactContext);
+import VacList from './VacList';
+import {
+  Button,
+  Jumbotron,
+  Container,
+  Row,
+  Col,
+  Form,
+  Input,
+  Label,
+  FormText,
+  FormGroup
+} from 'reactstrap';
 
-  const { addContact, updateContact, clearCurrent, current } = contactContext;
+const VacForm = () => {
+  const vaccineContext = useContext(VaccineContext);
+
+  const { addVaccine, updateVaccine, clearCurrent, current } = vaccineContext;
 
   useEffect(() => {
     if (current !== null) {
-      setContact(current);
+      setVaccine(current);
     } else {
-      setContact({
-        name: '',
-        email: '',
-        phone: '',
-        type: 'guest'
+      setVaccine({
+        vaccineName: '',
+        dateDue: '',
+        dateGiven: '',
+        type: 'scheduled'
       });
     }
-  }, [contactContext, current]);
+  }, [vaccineContext, current]);
 
-  const [contact, setContact] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    type: 'guest'
+  const [vaccine, setVaccine] = useState({
+    vaccineName: '',
+    dateDue: '',
+    dateGiven: '',
+    type: 'scheduled'
   });
 
-  const { name, email, phone, type } = contact;
+  const { vaccineName, dateDue, dateGiven, type } = vaccine;
 
   const onChange = e =>
-    setContact({ ...contact, [e.target.name]: e.target.value });
+    setVaccine({ ...vaccine, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
     if (current === null) {
-      addContact(contact);
+      addVaccine(vaccine);
     } else {
-      updateContact(contact);
+      updateVaccine(vaccine);
     }
     clearAll();
   };
   const clearAll = () => {
     clearCurrent();
-  }
-
-
+  };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h2 className="text-primary">
-        {current ? 'Edit Contact' : 'Add Contact'}
-      </h2>
-      <input
-        type="text"
-        placeholder="Name"
-        name="name"
-        value={name}
-        onChange={onChange}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        name="email"
-        value={email}
-        onChange={onChange}
-      />
-      <input
-        type="text"
-        placeholder="Phone"
-        name="phone"
-        value={phone}
-        onChange={onChange}
-      />
-      <h5>Contact Type</h5>
-      <input
-        type="radio"
-        name="type"
-        value="guest"
-        checked={type === 'guest'}
-        onChange={onChange}
-      /> {' '}
-      Guest{' '}
-      <input
-        type="radio"
-        name="type"
-        value="member"
-        checked={type === 'member'}
-        onChange={onChange}
-      /> {' '}
-      Member
-      <div>
-        <input
-          type="submit"
-          value={current ? 'Update Contact' : 'Add Contact'}
-          className="btn btn-primary btn-block"
-        />
-      </div>
-      {current && (
-        <div>
-          <button className="btn btn-light btn-block" onClick={clearAll}>
-            Clear
-            </button>
-        </div>
-      )}
-    </form>
+    <Jumbotron fluid>
+      <Container>
+        <Row>
+          <Col>
+            <Form onSubmit={onSubmit}>
+              <FormGroup>
+                <FormText><h3 className="text-primary">
+                  {current ? 'Edit Vaccine' : 'Add Vaccine'}
+                </h3></FormText>
+                <Label for="vaccineName">Vaccine</Label>
+                <Input
+                  id="vaccineName"
+                  type="text"
+                  placeholder="Vaccine"
+                  name="vaccineName"
+                  value={vaccineName}
+                  onChange={onChange}
+                />
+                <Input
+                  type="date"
+                  placeholder="Date Given"
+                  name="dateGiven"
+                  value={dateGiven}
+                  onChange={onChange}
+                />
+                <Input
+                  type="date"
+                  placeholder="Date Due"
+                  name="dateDue"
+                  value={dateDue}
+                  onChange={onChange}
+                />
+
+                {/* <FormText><h5>Vaccine Type</h5></FormText> */}
+                <Input
+                  type="radio"
+                  name="type"
+                  value="taken"
+                  checked={type === 'taken'}
+                  onChange={onChange}
+                />{' '} Taken {' '} {<br />}
+                <Input
+                  type="radio"
+                  name="type"
+                  value="scheduled"
+                  checked={type === '  scheduled'}
+                  onChange={onChange}
+                /> {' '}   Scheduled {''}
+                <Input
+                  type="submit"
+                  value={current ? 'Update Vaccination' : 'Add Vaccination'}
+                  className="btn btn-primary btn-block"
+                />
+
+                {current && (
+
+                  <Button className="btn-block" onClick={clearAll}>
+                    Clear
+                  </Button>
+                )}
+              </FormGroup>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </Jumbotron>
+
   );
 }
 
-export default ContactForm;
+export default VacForm;

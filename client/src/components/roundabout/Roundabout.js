@@ -37,9 +37,7 @@ const items = [
   }
 ];
 
-console.log('src definition:', typeof (src));
-
-const RoundAbout = (prop) => {
+const RoundAbout = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -70,7 +68,7 @@ const RoundAbout = (prop) => {
         <img src={item.src} alt={item.altText} />
         <CarouselCaption
           captionHeader={item.caption || item.captionText}
-          captionText=""
+          captionText=''
         />
       </CarouselItem>
     );
@@ -81,10 +79,11 @@ const RoundAbout = (prop) => {
       <style>
         {
           `.custom-tag {
-                vh: 100;
-                vh: 100;
+                height: 70%;
+                width: 100vw;
                 background: black;
                 opacity: 0.9;
+                padding: 3px 2px 3px 2px;
               }
               .carousel-caption h3 {
                 color: #20c997;

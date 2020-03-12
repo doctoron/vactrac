@@ -1,25 +1,25 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import ContactContext from '../../context/contact/contactContext';
+import VaccineContext from '../../context/vaccinations/vaccineContext';
 
-const ContactItem = ({ contact }) => {
-  const contactContext = useContext(ContactContext);
-  const { deleteContact, setCurrent, clearCurrent } = contactContext;
+const VacItem = ({ vaccine }) => {
+  const vaccineContext = useContext(VaccineContext);
+  const { deleteVaccine, setCurrent, clearCurrent } = vaccineContext;
 
-  const { _id, name, email, phone, type } = contact;
+  const { _id, vaccineName, dateDue, dateGiven, type } = vaccine;
 
   const onDelete = () => {
-    deleteContact(_id);
+    deleteVaccine(_id);
     clearCurrent();
   }
 
   return (
     <div className='card bg-light'>
       <h3 className="text-primary text-left">
-        {name}{' '}
+        {vaccineName}{' '}
         <span style={{ float: 'right' }}
           className={'badge ' +
-            (type === 'member' ? 'badge-success' : 'badge-primary')
+            (type === 'given' ? 'badge-success' : 'badge-primary')
           }
         >
           {/* Take first character to uppercase */}
@@ -27,25 +27,24 @@ const ContactItem = ({ contact }) => {
         </span>
       </h3>
       <ul className="list">
-        {email && (<li>
-          <i className="fas fa-envelope-open"></i> {email}
+        {dateGiven && (<li>
+          <i className="fas fa-syringe"></i> {dateGiven}
         </li>)}
-        {phone && (<li>
-          <i className="fas fa-phone"></i> {phone}
+        {dateDue && (<li>
+          <i className="fas fa-syringe"></i> {dateDue}
         </li>)}
       </ul>
       <p>
-        {(type === 'member' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
-        <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>
+        {(type === 'given' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
+        <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
         <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
       </p>
-
     </div>
   );
 };
 
-ContactItem.propTypes = {
+VacItem.propTypes = {
   contact: PropTypes.object.isRequired
 }
 
-export default ContactItem;
+export default VacItem;

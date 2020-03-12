@@ -32,7 +32,7 @@ const NavStrap = (props) => {
           </NavItem>
 
           <NavItem className='custNav'>
-            <Button color='primary' size="sm"><NavLink className='custNav' href="/vacrecs">Vaccinations</NavLink></Button>
+            <Button color='primary' size="sm"><NavLink className='custNav' href="/vaccines">Vaccinations</NavLink></Button>
           </NavItem>
 
           <NavItem className='custNav'>

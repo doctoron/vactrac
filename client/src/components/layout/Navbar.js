@@ -5,13 +5,17 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import ContactContext from '../../context/contact/contactContext';
+import VaccineContext from '../../context/vaccinations/vaccineContext';
 
 export const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
   const contactContext = useContext(ContactContext);
+  const vaccineContext = useContext(VaccineContext);
 
   const { isAuthenticated, logout, user, loadUser } = authContext;
   const { clearContacts } = contactContext;
+  const { clearVaccines } = vaccineContext;
+
 
   useEffect(() => {
     loadUser();
@@ -21,6 +25,7 @@ export const Navbar = ({ title, icon }) => {
   const onLogout = () => {
     logout();
     clearContacts();
+    clearVaccines();
   };
 
   const authLinks = (
@@ -40,7 +45,7 @@ export const Navbar = ({ title, icon }) => {
       </li>
       <li>
         <Button color="primary">
-          <Link to="/vacrecs"
+          <Link to="/vaccines"
             style={{ textDecoration: 'none' }}
           >
             Vaccinations

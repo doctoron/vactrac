@@ -1,11 +1,13 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import ContactContext from '../../context/contact/contactContext';
+import { Form, Input } from 'reactstrap';
 
-const ContactFilter = () => {
-  const contactContext = useContext(ContactContext);
+import VaccineContext from '../../context/vaccinations/vaccineContext';
+
+const VacFilter = () => {
+  const vaccineContext = useContext(VaccineContext);
   const text = useRef('');
 
-  const { filterContacts, clearFilter, filtered } = contactContext;
+  const { filterVaccines, clearFilter, filtered } = vaccineContext;
 
   useEffect(() => {
     if (filtered === null) {
@@ -15,23 +17,23 @@ const ContactFilter = () => {
 
   const onChange = e => {
     if (text.current.value !== '') {
-      filterContacts(e.target.value)
+      filterVaccines(e.target.value)
     } else {
       clearFilter();
     }
   };
 
   return (
-    <form>
-      <input
+    <Form>
+      <Input
         ref={text}
         type="text"
-        placeholder="Filter Contacts..."
+        placeholder="My Tracked Vaccinations..."
         onChange={onChange}
       />
-    </form>
+    </Form>
   )
 }
 
-export default ContactFilter
+export default VacFilter
 

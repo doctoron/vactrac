@@ -2,43 +2,45 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import VacItem from './VacItem';
 import Spinner from '../layout/Spinner';
-import ContactContext from '../../context/contact/contactContext';
+import VaccineContext from '../../context/vaccinations/vaccineContext';
 
 const Vaccinations = () => {
-  const contactContext = useContext(ContactContext);
+  const vaccineContext = useContext(VaccineContext);
 
-  const { contacts, filtered, getContacts, loading } = contactContext;
+  const { vaccines, filtered, getVaccines, loading } = vaccineContext;
 
   useEffect(() => {
-    getContacts();
+    getVaccines();
     // eslint-disable-next-line
   }, []);
 
-  if (contacts !== null && contacts.length === 0 && !loading) {
-    return <h4>Please add a contact</h4>;
+  if (vaccines !== null && vaccines.length === 0 && !loading) {
+    return <h4>Review or Schedule Vaccinations</h4>;
   }
 
   return (
     <Fragment>
-      {contacts != null && !loading ? (
+      <span><h3>Vaccine List</h3></span>
+      {vaccines != null && !loading ? (
         <TransitionGroup>
           {filtered !== null
-            ? filtered.map(contact => (
+            ? filtered.map(vaccine => (
               <CSSTransition
-                key={contact._id}
+                key={vaccine._id}
                 timeout={500}
                 classNames="item"
               >
-                <VacItem contact={contact} />
+                <VacItem vaccine={vaccine} />
               </CSSTransition>
             ))
-            : contacts.map(contact => (
+            : vaccines.map(vaccine => (
               <CSSTransition
-                key={contact._id}
+                key={vaccine._id}
                 timeout={500}
                 classNames="item"
               >
-                <VacItem contact={contact} />
+                <VacItem vaccine={vaccine} />
+
               </CSSTransition>
             ))}
         </TransitionGroup>
