@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
-import VacList from './VacList';
 import {
   Button,
   Jumbotron,
@@ -77,6 +76,7 @@ const VacForm = () => {
                   value={vaccineName}
                   onChange={onChange}
                 />
+                <Label for="dateGiven">Date Given</Label>
                 <Input
                   type="date"
                   placeholder="Date Given"
@@ -84,6 +84,7 @@ const VacForm = () => {
                   value={dateGiven}
                   onChange={onChange}
                 />
+                <Label for="dateDue">Date Due</Label>
                 <Input
                   type="date"
                   placeholder="Date Due"
@@ -91,30 +92,32 @@ const VacForm = () => {
                   value={dateDue}
                   onChange={onChange}
                 />
-
-                {/* <FormText><h5>Vaccine Type</h5></FormText> */}
-                <Input
-                  type="radio"
-                  name="type"
-                  value="taken"
-                  checked={type === 'taken'}
-                  onChange={onChange}
-                />{' '} Taken {' '} {<br />}
-                <Input
-                  type="radio"
-                  name="type"
-                  value="scheduled"
-                  checked={type === '  scheduled'}
-                  onChange={onChange}
-                /> {' '}   Scheduled {''}
+                <div className="radio-container">
+                  <Label for="type">Received or Scheduled?</Label> <br />
+                  <Input
+                    type="radio"
+                    value="received"
+                    name="received"
+                    checked=
+                    {type === 'received'}
+                    onChange={onChange}
+                  /> {''}
+                Received {''}
+                  <Input
+                    type="radio"
+                    value="scheduled"
+                    name="type"
+                    checked=
+                    {type === 'scheduled'}
+                    onChange={onChange}
+                  /> Scheduled <br />   <br />
+                </div>
                 <Input
                   type="submit"
                   value={current ? 'Update Vaccination' : 'Add Vaccination'}
                   className="btn btn-primary btn-block"
                 />
-
                 {current && (
-
                   <Button className="btn-block" onClick={clearAll}>
                     Clear
                   </Button>
@@ -125,8 +128,6 @@ const VacForm = () => {
         </Row>
       </Container>
     </Jumbotron>
-
   );
 }
-
 export default VacForm;

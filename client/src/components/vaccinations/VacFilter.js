@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import { Form, Input } from 'reactstrap';
+import { Form, Input, Container } from 'reactstrap';
 
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
@@ -24,14 +24,16 @@ const VacFilter = () => {
   };
 
   return (
-    <Form>
-      <Input
-        ref={text}
-        type="text"
-        placeholder="My Tracked Vaccinations..."
-        onChange={onChange}
-      />
-    </Form>
+    <Container>
+      <Form>
+        <Input
+          ref={text}
+          type="text"
+          placeholder="Search..."
+          onChange={onChange}
+        />
+      </Form>
+    </Container>
   )
 }
 

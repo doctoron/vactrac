@@ -4,7 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import User from './components/pages/User';
 import EarlyAlert from './components/pages/EarlyAlert';
-import VacRecs from './components/pages/VacRecords';
+import MyVac from './components/pages/MyVac';
 import Blog from './components/pages/Blog';
 import ContactState from './context/contact/ContactState';
 import VaccineState from './context/vaccinations/VaccineState';
@@ -42,7 +42,7 @@ const App = () => {
                     <Route exact path='/register' component={Register} />
                     <Route exact path='/oeas' component={EarlyAlert} />
                     <PrivateRoute exact path='/user' component={User} />
-                    <PrivateRoute exact path='/vaccines' component={VacRecs} />
+                    <PrivateRoute exact path='/vaccines' component={MyVac} />
                     <PrivateRoute exact path='/blog' component={Blog} />
                     {/* <Route exact path='/about' component={About} /> */}
                   </Switch>

@@ -11,11 +11,11 @@ const VaccinesSchema = mongoose.Schema({
   },
   dateDue: {
     type: Date,
-    default: Date.now
+    default: Date
   },
   dateGiven: {
     type: Date,
-    default: Date.now
+    default: Date
   },
   type: {
     type: String,

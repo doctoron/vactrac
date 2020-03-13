@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Jumbotron, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
@@ -14,37 +15,41 @@ const VacItem = ({ vaccine }) => {
   }
 
   return (
-    <div className='card bg-light'>
-      <h3 className="text-primary text-left">
-        {vaccineName}{' '}
-        <span style={{ float: 'right' }}
-          className={'badge ' +
-            (type === 'given' ? 'badge-success' : 'badge-primary')
-          }
-        >
-          {/* Take first character to uppercase */}
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
-      </h3>
-      <ul className="list">
-        {dateGiven && (<li>
-          <i className="fas fa-syringe"></i> {dateGiven}
-        </li>)}
-        {dateDue && (<li>
-          <i className="fas fa-syringe"></i> {dateDue}
-        </li>)}
-      </ul>
-      <p>
-        {(type === 'given' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
-        <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
-        <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
-      </p>
-    </div>
+    // <Jumbotron>
+    <Container>
+      <div className='card bg-light'>
+        <h3 className="text-primary text-left">
+          {vaccineName}{' '}
+          <span style={{ float: 'right' }}
+            className={'badge ' +
+              (type === 'Received' ? 'badge-success' : 'badge-primary')
+            }
+          >
+            {/* Take first character to uppercase */}
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </span>
+        </h3>
+        <ul className="list">
+          {dateGiven && (<li >
+            <i className="fas fa-syringe syringe"></i> {dateGiven}
+          </li>)}
+          {dateDue && (<li>
+            <i className="fas fa-syringe syringe"></i> {dateDue}
+          </li>)}
+        </ul>
+        <p>
+          {(type === 'received' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
+          <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
+          <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+        </p>
+      </div>
+    </Container>
+    // </Jumbotron>
   );
 };
 
 VacItem.propTypes = {
-  contact: PropTypes.object.isRequired
+  vaccine: PropTypes.object.isRequired
 }
 
 export default VacItem;
