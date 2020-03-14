@@ -68,9 +68,8 @@ const RoundAbout = (props) => {
       >
         <img src={item.src} alt={item.altText} />
         <CarouselCaption
-          captionText={item.captionText}
-          className="carousel-caption h3"
-          captionHeader={item.caption}
+          captionHeader={item.caption || item.captionText}
+          captionText=''
         />
       </CarouselItem>
     );
@@ -81,10 +80,11 @@ const RoundAbout = (props) => {
       <style>
         {
           `.custom-tag {
-                vh: 100;
-                vh: 100;
+                height: 70%;
+                width: 100vw;
                 background: black;
                 opacity: 0.9;
+                padding: 3px 2px 3px 2px;
               }
               .carousel-caption h3 {
                 color: #20c997;

@@ -17,4 +17,12 @@ export const AUTH_ERROR = 'AUTH_ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
+export const GET_VACCINES = 'GET_VACCINES';
+export const ADD_VACCINE = 'ADD_VACCINE';
+export const DELETE_VACCINE = 'DELETE_VACCINE';
+export const UPDATE_VACCINE = 'UPDATE_VACCINE';
+export const FILTER_VACCINES = 'FILTER_VACCINES';
+export const CLEAR_VACCINES = 'CLEAR_VACCINES';
+export const VACCINE_ERROR = 'VACCINE_ERROR';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+

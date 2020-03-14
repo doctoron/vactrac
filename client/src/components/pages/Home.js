@@ -16,9 +16,11 @@ const Home = () => {
     <Fragment>
       <Container>
         <Roundabout />
+      </Container>
+      <Container>
         <Row>
           <Col></Col>
-          <Col sm="10"><Cards /></Col>
+          <Col sm="12"><Cards /></Col>
           <Col></Col>
         </Row>
       </Container>
