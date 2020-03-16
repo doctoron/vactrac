@@ -12,8 +12,8 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 1.0px;
+  padding: 2.5;
 }
 
 body {
@@ -22,6 +22,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  margin: 1.0px 25px .75px 5px;
 }
 
 a {
@@ -106,6 +107,10 @@ img {
   color: var(--dark-color);
 }
 
+.text-danger {
+  color: var(--danger-color);
+}
+
 .text-center {
   text-align: center;
 }
@@ -121,6 +126,10 @@ img {
 /* Carousel */
 
 .carousel-item>img {
+  width: 100%;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
   width: 100%;
 }
 
@@ -248,7 +257,7 @@ img {
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin-right: .5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
 }
@@ -347,7 +356,8 @@ input {
 input[type='text'], input[type='email'], input[type='password'], input[type='radio'], input[type='date'], select, textarea {
   display: block;
   width: 100%;
-  padding: 0.5rem;
+  margin: 3px 0 3px 3px;
+  padding: .5rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
@@ -357,7 +367,7 @@ input[type='submit'], button {
 }
 
 .form-group {
-  margin: 1.2rem 0;
+  margin: 1.2rem 1.2rem;
 }
 
 .form-group input {
@@ -413,9 +423,9 @@ table th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 1.0rem;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
   margin-bottom: 1rem;
@@ -437,7 +447,7 @@ table th {
 }
 
 .navbar .welcome span {
-  margin-right: 0.6rem;
+  margin-right: 1.5rem;
 }
 
 /* Footer */

@@ -25,4 +25,6 @@ export const FILTER_VACCINES = 'FILTER_VACCINES';
 export const CLEAR_VACCINES = 'CLEAR_VACCINES';
 export const VACCINE_ERROR = 'VACCINE_ERROR';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+// export const DATE_PICKER = 'DATE_PICKER';
+
 

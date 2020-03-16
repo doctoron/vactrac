@@ -7,8 +7,8 @@ import {
   UPDATE_VACCINE,
   FILTER_VACCINES,
   CLEAR_FILTER,
-  CLEAR_VACCINES,
-  VACCINE_ERROR
+  VACCINE_ERROR,
+  CLEAR_VACCINES
 } from '../types';
 
 export default (state, action) => {
@@ -64,7 +64,7 @@ export default (state, action) => {
         ...state,
         filtered: state.vaccines.filter(vaccine => {
           const regex = new RegExp(`${action.payload}`, 'gi')
-          return vaccine.name.match(regex) || vaccine.email.match(regex);
+          return vaccine.vaccineName.match(regex) || vaccine.dateReceived.match(regex);
         })
       };
     case CLEAR_FILTER:

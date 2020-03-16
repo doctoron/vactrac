@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
-import { Jumbotron, Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Vaccinations from '../vaccinations/Vaccinations';
 import VacForm from '../vaccinations/VacForm';
+import VacFilter from '../vaccinations/VacFilter';
 
 
-const MyVacTrack = () => {
+const MyVac = () => {
   return (
     <Fragment>
       <Container>
-        {/* <Jumbotron> */}
         <Row>
-          <Col>
+          <Col xs="12">
             <span><h2>Vaccination Records</h2></span>
           </Col>
         </Row>
@@ -19,12 +19,12 @@ const MyVacTrack = () => {
             <VacForm />
           </Col>
           <Col xs="6">
+            <VacFilter />
             <Vaccinations />
           </Col>
         </Row>
-        {/* </Jumbotron> */}
       </Container >
     </Fragment>
   )
 }
-export default MyVacTrack;
+export default MyVac;

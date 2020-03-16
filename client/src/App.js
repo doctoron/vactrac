@@ -6,7 +6,7 @@ import User from './components/pages/User';
 import EarlyAlert from './components/pages/EarlyAlert';
 import MyVac from './components/pages/MyVac';
 import Blog from './components/pages/Blog';
-import ContactState from './context/contact/ContactState';
+// import ContactState from './context/contact/ContactState';
 import VaccineState from './context/vaccinations/VaccineState';
 import AuthState from './context/auth/AuthState';
 import Register from './components/auth/Register';
@@ -27,31 +27,30 @@ if (localStorage.token) {
 const App = () => {
   return (
     <AuthState>
-      <ContactState>
-        <VaccineState>
-          <AlertState>
-            <Router>
-              <Fragment>
-                {/* <NavStrap /> */}
-                <Navbar />
-                <div className="container">
-                  <Alerts />
-                  <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route exact path='/login' component={Login} />
-                    <Route exact path='/register' component={Register} />
-                    <Route exact path='/oeas' component={EarlyAlert} />
-                    <PrivateRoute exact path='/user' component={User} />
-                    <PrivateRoute exact path='/vaccines' component={MyVac} />
-                    <PrivateRoute exact path='/blog' component={Blog} />
-                    {/* <Route exact path='/about' component={About} /> */}
-                  </Switch>
-                </div>
-              </Fragment>
-            </Router>
-          </AlertState>
-        </VaccineState>
-      </ContactState>
+      {/* <ContactState> */}
+      <VaccineState>
+        <AlertState>
+          <Router>
+            <Fragment>
+              <Navbar />
+              <div className="container">
+                <Alerts />
+                <Switch>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/login' component={Login} />
+                  <Route exact path='/register' component={Register} />
+                  <Route exact path='/oeas' component={EarlyAlert} />
+                  <PrivateRoute exact path='/user' component={User} />
+                  <PrivateRoute exact path='/vaccines' component={MyVac} />
+                  <PrivateRoute exact path='/blog' component={Blog} />
+                  {/* <Route exact path='/about' component={About} /> */}
+                </Switch>
+              </div>
+            </Fragment>
+          </Router>
+        </AlertState>
+      </VaccineState>
+      {/* </ContactState> */}
     </AuthState>
   )
 }

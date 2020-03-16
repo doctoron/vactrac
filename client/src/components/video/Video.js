@@ -2,20 +2,19 @@ import React, { Fragment } from 'react';
 import { Container } from 'reactstrap';
 
 // import Youtube from 'react-youtube';
-
 const Video = () => {
   return (
     <Fragment>
       <Container className="iframe-container">
         <iframe
+          src="https://www.youtube-nocookie.com/embed/LWmok9avzr4"
           className="video-embed"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/LWmok9avzr4"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           title="CDC Handwashing Video"
-          allowfullscreen="true">
+          allowFullScreen={true}>
         </iframe>
       </Container>
     </Fragment>

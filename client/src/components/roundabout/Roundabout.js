@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import {
+  Container,
   Carousel,
   CarouselItem,
   CarouselControl,
@@ -7,9 +8,9 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-import image1 from '../../img/roundAbout-Logo.jpg';
-import image2 from '../../img/puzzle1.jpg';
-import video from '../../components/video/Video';
+import image1 from '../../img/puzzle12.jpg';
+import image2 from '../../img/roundAbout2-Logo.jpg';
+import image3 from '../../img/adult-celebrate2.jpg';
 
 
 const items = [
@@ -18,22 +19,19 @@ const items = [
     altText: 'Immunization Puzzle',
     caption: '#vaccineswork',
     captionText: '',
-    key: '1'
   },
   {
     src: image2,
     altText: 'VackTRACK Logo',
     caption: '#vaccineswork',
     captionText: '',
-    key: '2'
 
   },
   {
-    src: video,
+    src: image3,
     altText: '',
-    caption: '',
+    caption: '#vaccineswork',
     captionText: '',
-    key: '3'
   }
 ];
 
@@ -60,14 +58,13 @@ const RoundAbout = (props) => {
 
   const slides = items.map((item) => {
     return (
-      <CarouselItem
+      <CarouselItem className="carousel-inner"
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption
-          captionHeader={item.caption || item.captionText}
+        <img className="d-block w-100" src={item.src} alt={item.altText} />
+        <CarouselCaption captionHeader={item.caption || item.captionText}
           captionText=''
         />
       </CarouselItem>
@@ -75,43 +72,48 @@ const RoundAbout = (props) => {
   });
 
   return (
-    <Fragment>
-      <style>
-        {
-          `.custom-tag {
+    <Container>
+      <Fragment>
+        <style>
+          {
+            `.custom-tag {
                 height: 70%;
-                width: 100vw;
+                width: 100%;
                 background: black;
                 opacity: 0.9;
-                padding: 3px 2px 3px 2px;
+                margin: 2rem 5rem
+                padding: 3rem 2rem 3rem 2rem;
               }
               .carousel-caption h3 {
                 color: #20c997;
                 text-shadow: 2px 2px black;
               }
               `
-        }
-      </style>
-      <Carousel
-        activeIndex={activeIndex}
-        next={next}
-        previous={previous}
-      >
-        <CarouselIndicators
-          items={items}
+          }
+        </style>
+        <Carousel
           activeIndex={activeIndex}
-          onClickHandler={goToIndex}
-        />
-        {slides}
-        <CarouselControl direction="prev"
-          directionText="Previous" onClickHandler={previous}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next" onClickHandler={next}
-        />
-      </Carousel>
-    </Fragment>
+          next={next}
+          previous={previous}
+        >
+          <CarouselIndicators
+            items={items}
+            activeIndex={activeIndex}
+            onClickHandler={goToIndex}
+          />
+          {slides}
+          <CarouselControl
+            direction="prev"
+            directionText="Previous"
+            onClickHandler={previous}
+          />
+          <CarouselControl
+            direction="next"
+            directionText="Next" onClickHandler={next}
+          />
+        </Carousel>
+      </Fragment>
+    </Container>
   );
 }
 

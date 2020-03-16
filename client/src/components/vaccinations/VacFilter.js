@@ -1,6 +1,4 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import { Form, Input, Container } from 'reactstrap';
-
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
 const VacFilter = () => {
@@ -13,7 +11,7 @@ const VacFilter = () => {
     if (filtered === null) {
       text.current.value = '';
     }
-  })
+  });
 
   const onChange = e => {
     if (text.current.value !== '') {
@@ -21,21 +19,22 @@ const VacFilter = () => {
     } else {
       clearFilter();
     }
+    // console.log('Text', e.target.value);
   };
 
   return (
-    <Container>
-      <Form>
-        <Input
+    <div>
+      <form>
+        <input
           ref={text}
           type="text"
           placeholder="Search..."
           onChange={onChange}
         />
-      </Form>
-    </Container>
+      </form>
+    </div>
   )
 }
 
-export default VacFilter
+export default VacFilter;
 

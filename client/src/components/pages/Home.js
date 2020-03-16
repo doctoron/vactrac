@@ -20,7 +20,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col></Col>
-          <Col sm="12"><Cards /></Col>
+          <Col sm="10"><Cards /></Col>
           <Col></Col>
         </Row>
       </Container>

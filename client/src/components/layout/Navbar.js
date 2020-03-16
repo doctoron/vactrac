@@ -4,16 +4,16 @@ import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
-import ContactContext from '../../context/contact/contactContext';
+// import ContactContext from '../../context/contact/contactContext';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
 export const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
-  const contactContext = useContext(ContactContext);
+  // const contactContext = useContext(ContactContext);
   const vaccineContext = useContext(VaccineContext);
 
   const { isAuthenticated, logout, user, loadUser } = authContext;
-  const { clearContacts } = contactContext;
+  // const { clearContacts } = contactContext;
   const { clearVaccines } = vaccineContext;
 
 
@@ -24,7 +24,7 @@ export const Navbar = ({ title, icon }) => {
 
   const onLogout = () => {
     logout();
-    clearContacts();
+    // clearContacts();
     clearVaccines();
   };
 

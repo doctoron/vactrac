@@ -7,15 +7,15 @@ const VaccinesSchema = mongoose.Schema({
   },
   vaccineName: {
     type: String,
-    required: true
+    required: [true, 'Would you like to search the MyVac list?']
   },
   dateDue: {
     type: Date,
-    default: Date
+    default: Date.now
   },
-  dateGiven: {
+  dateReceived: {
     type: Date,
-    default: Date
+    default: Date.now
   },
   type: {
     type: String,

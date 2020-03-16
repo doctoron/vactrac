@@ -21,16 +21,25 @@
 		"express": "^4.17.1",
 		"express-validator": "^6.4.0",
 		"jsonwebtoken": "^8.5.1",
+		"moment": "^2.24.0",
 		"mongodb": "^3.5.3",
 		"mongoose": "^5.9.1",
 		"react": "^16.13.0",
+		"react-datepicker": "^2.14.0",
 		"react-dom": "^16.13.0",
 		"react-youtube": "^7.9.0",
-		"reactstrap": "^8.4.1",
-		"reat": "0.0.1-security"
+		"reactstrap": "^8.4.1"
 	},
 	"devDependencies": {
 		"concurrently": "^5.1.0",
 		"nodemon": "^2.0.2"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/doctoron/vactrac.git"
+	},
+	"bugs": {
+		"url": "https://github.com/doctoron/vactrac/issues"
+	},
+	"homepage": "https://github.com/doctoron/vactrac#readme"
 }

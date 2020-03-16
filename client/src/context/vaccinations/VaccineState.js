@@ -10,8 +10,8 @@ import {
   CLEAR_CURRENT,
   UPDATE_VACCINE,
   FILTER_VACCINES,
-  CLEAR_FILTER,
   CLEAR_VACCINES,
+  CLEAR_FILTER,
   VACCINE_ERROR
 } from '../types';
 
@@ -60,7 +60,7 @@ const VaccineState = props => {
     } catch (err) {
       dispatch({
         type: VACCINE_ERROR,
-        payload: err.response.msg
+        payload: err.response.data.msg
       });
     }
   };
