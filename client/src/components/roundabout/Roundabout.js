@@ -22,6 +22,7 @@ const items = [
   },
   {
     src: image2,
+
     altText: 'VackTRACK Logo',
     caption: '#vaccineswork',
     captionText: '',
