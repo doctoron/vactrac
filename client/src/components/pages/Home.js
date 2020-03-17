@@ -28,7 +28,7 @@ const Home = () => {
       <Container className="main-footer">
         <Row>
           <Col></Col>
-          <Col sm="10"><h6 className="p-c">Antonio's Magnet &copy; 2019, All Rights Reserved</h6></Col>
+          <Col sm="10"><h6 className="p-c">Antonio's Magnet &bull; Ronald Antonio &copy; 2019, All Rights Reserved</h6></Col>
           <Col></Col>
         </Row>
       </Container>

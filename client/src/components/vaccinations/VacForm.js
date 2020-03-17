@@ -3,10 +3,6 @@ import VaccineContext from '../../context/vaccinations/vaccineContext';
 
 import {
   Button,
-  // Jumbotron,
-  // Container,
-  // Row,
-  // Col,
   Form,
   Input,
   Label,
@@ -58,10 +54,6 @@ const VacForm = () => {
   };
 
   return (
-    // <Container>
-    // <Jumbotron fluid>
-    // <Row>
-    // <Col>
     <Form onSubmit={onSubmit}>
       <FormGroup>
         <FormText><h3 className="text-primary">
@@ -128,10 +120,6 @@ const VacForm = () => {
         )}
       </FormGroup>
     </Form>
-    // </Col>
-    // </Row>
-    // </Jumbotron>
-    // </Container>
   );
 }
 export default VacForm;

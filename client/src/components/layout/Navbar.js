@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-import { Button } from 'reactstrap';
+import { Button, Container } from 'reactstrap';
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -30,44 +30,46 @@ export const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li><Button color="success"
-      >
-        Hello {user && user.name}
-      </Button></li>
-      <li>
-        <Button color="primary">
-          <Link to="/oeas"
-            style={{ textDecoration: 'none' }}
-          >
-            Resources
+      <Container>
+        <li><Button color="success"
+        >
+          Hello {user && user.name}
+        </Button></li>
+        <li>
+          <Button color="primary">
+            <Link to="/oeas"
+              style={{ textDecoration: 'none' }}
+            >
+              Resources
             </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/vaccines"
-            style={{ textDecoration: 'none' }}
-          >
-            Vaccinations
+          </Button>
+        </li>
+        <li>
+          <Button color="primary">
+            <Link to="/vaccines"
+              style={{ textDecoration: 'none' }}
+            >
+              Vaccinations
           </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/blog"
-            style={{ textDecoration: 'none' }}
-          >
-            Blog
+          </Button>
+        </li>
+        <li>
+          <Button color="primary">
+            <Link to="/blog"
+              style={{ textDecoration: 'none' }}
+            >
+              Blog
             </Link>
-        </Button>
-      </li>
+          </Button>
+        </li>
 
-      <li>
-        <a onClick={onLogout} href="#!">
-          <i className="fas fa-sign-out-alt" />{''}
-          <span className="hide-sm">Logout</span>
-        </a>
-      </li>
+        <li>
+          <a onClick={onLogout} href="#!">
+            <i className="fas fa-sign-out-alt" />{''}
+            <span className="hide-sm">Logout</span>
+          </a>
+        </li>
+      </Container>
     </Fragment >
   );
 

@@ -11,11 +11,11 @@ const MyVac = () => {
       <Container>
         <Row>
           <Col xs="12">
-            <span><h2>Vaccination Records</h2></span>
+            <span><h2>My VacTrack Records</h2></span>
           </Col>
         </Row>
         <Row>
-          <Col xs="6">
+          <Col xs="auto">
             <VacForm />
           </Col>
           <Col xs="6">
