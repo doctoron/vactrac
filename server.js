@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
+// hidden environment variables
 require('dotenv').config();
 
 const app = express();
