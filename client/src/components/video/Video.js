@@ -11,11 +11,7 @@ const Video = () => {
           className="video-embed"
           width="560"
           height="315"
-<<<<<<< HEAD
-=======
-          src="https://www.youtube.com/embed/LWmok9avzr4"
           samesite="None"
->>>>>>> 194e36a057ebdfa5f5d9fa4ad79f8786e7aaccb8
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           title="CDC Handwashing Video"
