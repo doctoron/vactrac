@@ -24,7 +24,6 @@ const Vaccinations = () => {
       <Container>
         <Row>
           <Col>
-            <h3 className="text-primary">=-=-=-=-=-=-=</h3>
             {vaccines != null && !loading ? (
               <TransitionGroup>
                 {filtered !== null

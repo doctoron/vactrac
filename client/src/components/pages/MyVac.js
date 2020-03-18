@@ -8,17 +8,17 @@ import VacFilter from '../vaccinations/VacFilter';
 const MyVac = () => {
   return (
     <Fragment>
-      <Container>
+      <Container fluid>
         <Row>
           <Col xs="12">
             <span><h2>My VacTrack Records</h2></span>
           </Col>
         </Row>
         <Row>
-          <Col xs="auto">
+          <Col xs="6">
             <VacForm />
           </Col>
-          <Col xs="6">
+          <Col xs="4">
             <VacFilter />
             <Vaccinations />
           </Col>

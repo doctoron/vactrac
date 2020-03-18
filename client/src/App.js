@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
+import Menubar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 import Home from './components/pages/Home';
 import User from './components/pages/User';
 import EarlyAlert from './components/pages/EarlyAlert';
 import MyVac from './components/pages/MyVac';
 import Blog from './components/pages/Blog';
-// import ContactState from './context/contact/ContactState';
 import VaccineState from './context/vaccinations/VaccineState';
 import AuthState from './context/auth/AuthState';
 import Register from './components/auth/Register';
@@ -27,12 +27,11 @@ if (localStorage.token) {
 const App = () => {
   return (
     <AuthState>
-      {/* <ContactState> */}
       <VaccineState>
         <AlertState>
           <Router>
             <Fragment>
-              <Navbar />
+              <Menubar />
               <div className="container">
                 <Alerts />
                 <Switch>
@@ -45,12 +44,12 @@ const App = () => {
                   <PrivateRoute exact path='/blog' component={Blog} />
                   {/* <Route exact path='/about' component={About} /> */}
                 </Switch>
+                <Footer />
               </div>
             </Fragment>
           </Router>
         </AlertState>
       </VaccineState>
-      {/* </ContactState> */}
     </AuthState>
   )
 }

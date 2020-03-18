@@ -1,4 +1,9 @@
 import React, { useContext } from 'react';
+import {
+  Container,
+  Row,
+  Col
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 
@@ -16,36 +21,40 @@ const VacItem = ({ vaccine }) => {
   // console.log('vaccine type', (typeof (vaccineContext)));
 
   return (
-    // <Container>
-    < div className='card bg-light' >
-      <h3 className="text-primary text-left">
-        {vaccineName}{' '}
-        <span
-          style={{ float: 'right' }}
-          className={
-            'badge ' +
-            (type === 'received' ? 'badge-success' : 'badge-primary')
-          }
-        >
-          {/* Take first character to uppercase */}
-          {type.charAt(0).toUpperCase() + type.slice(1)}
-        </span>
-      </h3>
-      <ul className="list">
-        {dateReceived && (<li >
-          <i className="fas fa-syringe syringe"></i> {dateReceived}
-        </li>)}
-        {dateDue && (<li>
-          <i className="fas fa-syringe syringe"></i> {dateDue}
-        </li>)}
-      </ul>
-      <p>
-        {(type === 'received' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
-        <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
-        <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
-      </p>
-    </div >
-    // </Container>
+    <Container>
+      <Row>
+        <Col xs="auto">
+          < div className='card bg-light' >
+            <h3 className="text-primary text-left">
+              {vaccineName}{' '}
+              <span
+                style={{ float: 'right' }}
+                className={
+                  'badge ' +
+                  (type === 'received' ? 'badge-success' : 'badge-primary')
+                }
+              >
+                {/* Take first character to uppercase */}
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </span>
+            </h3>
+            <ul className="list">
+              {dateReceived && (<li >
+                <i className="fas fa-syringe syringe"></i> {dateReceived}
+              </li>)}
+              {dateDue && (<li>
+                <i className="fas fa-syringe syringe"></i> {dateDue}
+              </li>)}
+            </ul>
+            <p>
+              {(type === 'received' ? <button className="btn btn-success btn-sm">MyVacTrack</button> : " ")}
+              <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
+              <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+            </p>
+          </div >
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
