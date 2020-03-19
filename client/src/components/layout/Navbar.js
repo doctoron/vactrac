@@ -35,7 +35,6 @@ const Menubar = (props) => {
     clearVaccines();
   };
 
-
   const authLinks = (
     <Container className="authorized">
       <Navbar color="primary" light expand="md">
@@ -111,6 +110,9 @@ const Menubar = (props) => {
           </Link>
         </h1>
         <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
+      </div>
+      <div>
+        <Button color="danger" size="lg" block href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" target="_blank" rel="noopener noreferrer"><h4>COVID-19 Updates & Alerts</h4></Button>
       </div>
     </Container>
 
