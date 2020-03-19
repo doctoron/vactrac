@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-// import { Container, Jumbotron } from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import VacItem from './VacItem';
 import Spinner from '../layout/Spinner';
@@ -21,36 +21,37 @@ const Vaccinations = () => {
 
   return (
     <Fragment>
-      {/* <Container> */}
-      {/* <Jumbotron> */}
-      <h3 className="text-primary">My Vaccines</h3>
-      {vaccines != null && !loading ? (
-        <TransitionGroup>
-          {filtered !== null
-            ? filtered.map(vaccine => (
-              <CSSTransition
-                key={vaccine._id}
-                timeout={500}
-                classNames="item"
-              >
-                <VacItem vaccine={vaccine} />
-              </CSSTransition>
-            ))
-            : vaccines.map(vaccine => (
-              <CSSTransition
-                key={vaccine._id}
-                timeout={500}
-                classNames="item"
-              >
-                <VacItem vaccine={vaccine} />
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      ) : (
-          <Spinner />
-        )}
-      {/* </Jumbotron> */}
-      {/* </Container> */}
+      <Container>
+        <Row>
+          <Col>
+            {vaccines != null && !loading ? (
+              <TransitionGroup>
+                {filtered !== null
+                  ? filtered.map(vaccine => (
+                    <CSSTransition
+                      key={vaccine._id}
+                      timeout={500}
+                      classNames="item"
+                    >
+                      <VacItem vaccine={vaccine} />
+                    </CSSTransition>
+                  ))
+                  : vaccines.map(vaccine => (
+                    <CSSTransition
+                      key={vaccine._id}
+                      timeout={500}
+                      classNames="item"
+                    >
+                      <VacItem vaccine={vaccine} />
+                    </CSSTransition>
+                  ))}
+              </TransitionGroup>
+            ) : (
+                <Spinner />
+              )}
+          </Col>
+        </Row>
+      </Container>
     </Fragment>
   )
 };

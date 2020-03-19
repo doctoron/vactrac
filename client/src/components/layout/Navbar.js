@@ -1,21 +1,28 @@
-import React, { Fragment, useContext, useEffect } from 'react';
-import { Button } from 'reactstrap';
-
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
-// import ContactContext from '../../context/contact/contactContext';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
+import PropTypes from 'prop-types';
 
-export const Navbar = ({ title, icon }) => {
+import {
+  Container,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
+
+const Menubar = (props) => {
   const authContext = useContext(AuthContext);
-  // const contactContext = useContext(ContactContext);
-  const vaccineContext = useContext(VaccineContext);
-
   const { isAuthenticated, logout, user, loadUser } = authContext;
-  // const { clearContacts } = contactContext;
+  const vaccineContext = useContext(VaccineContext);
   const { clearVaccines } = vaccineContext;
 
+  const toggle = () => setIsOpen(!isOpen);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     loadUser();
@@ -24,111 +31,99 @@ export const Navbar = ({ title, icon }) => {
 
   const onLogout = () => {
     logout();
-    // clearContacts();
     clearVaccines();
   };
 
-  const authLinks = (
-    <Fragment>
-      <li><Button color="success"
-      >
-        Hello {user && user.name}
-      </Button></li>
-      <li>
-        <Button color="primary">
-          <Link to="/oeas"
-            style={{ textDecoration: 'none' }}
-          >
-            Resources
-            </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/vaccines"
-            style={{ textDecoration: 'none' }}
-          >
-            Vaccinations
-          </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/blog"
-            style={{ textDecoration: 'none' }}
-          >
-            Blog
-            </Link>
-        </Button>
-      </li>
 
-      <li>
-        <a onClick={onLogout} href="#!">
-          <i className="fas fa-sign-out-alt" />{''}
-          <span className="hide-sm">Logout</span>
-        </a>
-      </li>
-    </Fragment >
+  const authLinks = (
+    <Container className="authorized">
+      <Navbar color="primary" light expand="md">
+        <NavbarToggler onClick={toggle} />
+        <NavbarBrand href="/" style={{ textDecoration: 'none' }}
+        >
+          <h4 className="greeting">Greetings {user && user.name}</h4>
+        </NavbarBrand>
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="text-right" navbar>
+            <NavItem>
+              <button color="success" size="sm">
+                <NavLink href="/oeas">Resources</NavLink>
+              </button>
+            </NavItem>
+            <NavItem>
+              <button color="success" size="sm">
+                <NavLink href="/vaccines">Vaccinations</NavLink>
+              </button>
+            </NavItem>
+            <NavItem>
+              <button color="success" size="sm">
+                <NavLink href="/blog">Blog</NavLink>
+              </button>
+            </NavItem>
+            <NavItem>
+              <a onClick={onLogout} href="#!">
+                <i className="fas fa-sign-out-alt" />{''}
+                <span className="hide-sm">Logout</span>
+              </a>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </Container>
   );
 
   const guestLinks = (
-    <Fragment>
-      <li>
-        <Button color="primary">
-          <Link to="/oeas"
-            style={{ textDecoration: 'none' }}
-          >
-            Resources
-          </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/register"
-            style={{ textDecoration: 'none' }}
-          >
-            Register
-          </Link>
-        </Button>
-      </li>
-      <li>
-        <Button color="primary">
-          <Link to="/login"
-            style={{ textDecoration: 'none' }}
-          >
-            Login
-          </Link>
-        </Button>
-      </li>
-      {/* <li>
-        <Button color="primary"><Link to="/about">About</Link></Button>
-      </li> */}
-    </Fragment>
-  );
+    <Container className="guests">
+      <Navbar color="primary" light expand="md">
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <button color="success" text="fff" size="sm">
+                <NavLink href="/oeas">Resources</NavLink>
+              </button>
+            </NavItem>
+            <NavItem>
+              <button color="success" size="sm">
+                <NavLink href="/register" >Register</NavLink>
+              </button>
+            </NavItem>
+            <NavItem>
+              <button color="success" size="sm">
+                <NavLink href="/login">Login</NavLink>
+              </button>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </Container >
+  )
 
   return (
-    <div className="navbar bg-primary">
-      <h1>
-        <Link to='/'
-          style={{ textDecoration: 'none' }}
-        >
-          <i className={icon} /> {title}
-        </Link>
-      </h1>
-      <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
-    </div>
+    <Container>
+      <div className="navbar bg-primary">
+        <h1>
+          <NavLink href='/'
+            style={{ textDecoration: 'none' }}
+          >
+            <i className='logo fas fa-id-card-alt' /> VacTrack
+          </NavLink>
+        </h1>
+        <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
+      </div>
+    </Container>
 
   );
 };
 
-Navbar.propTypes = {
+Menubar.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
 }
 
-Navbar.defaultProps = {
+Menubar.defaultProps = {
   title: 'VacTrack',
   icon: 'fas fa-id-card-alt'
 };
 
-export default Navbar;
+export default Menubar;
