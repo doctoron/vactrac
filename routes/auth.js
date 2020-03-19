@@ -54,10 +54,17 @@ router.post('/',
         }
       }
 
+<<<<<<< HEAD
       jwt.sign(payload, config.get('JWTSECRET'),
         {
           // reset to 3600
           expiresIn: 3600
+=======
+      jwt.sign(payload, config.get('jwtSecret'),
+        {
+          // reset to 3600
+          expiresIn: 360000
+>>>>>>> 4ed2bdeee0fc0ce9c5c215c0d8d40284375346e3
         },
         (err, token) => {
           if (err) throw err;

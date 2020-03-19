@@ -11,7 +11,11 @@ module.exports = function (req, res, next) {
   }
 
   try {
+<<<<<<< HEAD
     const decoded = jwt.verify(token, config.get('JWTSECRET'));
+=======
+    const decoded = jwt.verify(token, config.get('jwtSecret'));
+>>>>>>> 4ed2bdeee0fc0ce9c5c215c0d8d40284375346e3
 
     req.user = decoded.user;
     next();
