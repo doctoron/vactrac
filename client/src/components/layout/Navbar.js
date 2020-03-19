@@ -46,17 +46,17 @@ const Menubar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="navbar" navbar>
             <NavItem>
-              <Button color="success" size="lg" block>
+              <Button size="lg" block>
                 <Link to="/oeas">Resources</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button color="success" size="lg" block>
+              <Button size="lg" block>
                 <Link to="/vaccines">Vaccinations</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button color="success" size="lg" block>
+              <Button size="lg" block>
                 <Link to="/blog">Blog</Link>
               </Button>
             </NavItem>
@@ -79,17 +79,17 @@ const Menubar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="navbar" navbar>
             <NavItem>
-              <Button color="success" text="fff" size="lg" block>
+              <Button text="fff" size="lg" block>
                 <Link to="/oeas">Resources</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button color="success" size="lg" block>
+              <Button size="lg" block>
                 <Link to="/register" >Register</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button color="success" size="lg" block>
+              <Button size="lg" block>
                 <Link to="/login">Login</Link>
               </Button>
             </NavItem>
@@ -126,7 +126,20 @@ Menubar.propTypes = {
 
 Menubar.defaultProps = {
   title: 'VacTrack',
-  icon: 'fas fa-id-card-alt'
+  icon: 'fas fa-id-card-alt',
 };
 
+Button.propTypes = {
+  active: PropTypes.bool,
+  'aria-label': PropTypes.string,
+  block: PropTypes.bool,
+  color: PropTypes.string, // default: 'secondary'
+  disabled: PropTypes.bool,
+  outline: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  color: 'dark',
+  tag: 'button',
+}
 export default Menubar;

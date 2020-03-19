@@ -2,7 +2,9 @@
 /* Global Styles */
 
 :root {
+  --typical-color: #000000;
   --primary-color: #003699;
+  --secondary-color: #c0c0c0;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -22,7 +24,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
-  color: #333;
+  color: #241414;
   margin: 1.0px .5px 1.0px 0.5px;
 }
 
@@ -163,6 +165,7 @@ img {
 
 .card>.Button>.a {
   text-decoration: none;
+  color: #241414;
 }
 
 /* Liblt */
