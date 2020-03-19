@@ -6,6 +6,7 @@ node_modules/
 
 _redirects
 
+.env
 
 /client/build
 
