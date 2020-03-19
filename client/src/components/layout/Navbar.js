@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import VaccineContext from '../../context/vaccinations/vaccineContext';
 import PropTypes from 'prop-types';
@@ -11,7 +12,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  Button
 } from 'reactstrap';
 
 const Menubar = (props) => {
@@ -39,37 +40,37 @@ const Menubar = (props) => {
     <Container className="authorized">
       <Navbar color="primary" light expand="md">
         <NavbarToggler onClick={toggle} />
-        <NavbarBrand href="/" style={{ textDecoration: 'none' }}
+        <NavbarBrand Link to="/" style={{ textDecoration: 'none' }}
         >
           <h4 className="greeting">Greetings {user && user.name}</h4>
         </NavbarBrand>
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="text-right" navbar>
+          <Nav className="navbar" navbar>
             <NavItem>
-              <button color="success" size="sm">
-                <NavLink href="/oeas">Resources</NavLink>
-              </button>
+              <Button color="success" size="lg" block>
+                <Link to="/oeas">Resources</Link>
+              </Button>
             </NavItem>
             <NavItem>
-              <button color="success" size="sm">
-                <NavLink href="/vaccines">Vaccinations</NavLink>
-              </button>
+              <Button color="success" size="lg" block>
+                <Link to="/vaccines">Vaccinations</Link>
+              </Button>
             </NavItem>
             <NavItem>
-              <button color="success" size="sm">
-                <NavLink href="/blog">Blog</NavLink>
-              </button>
+              <Button color="success" size="lg" block>
+                <Link to="/blog">Blog</Link>
+              </Button>
             </NavItem>
             <NavItem>
               <a onClick={onLogout} href="#!">
                 <i className="fas fa-sign-out-alt" />{''}
-                <span className="hide-sm">Logout</span>
+                <span className="hide-lg">Logout</span>
               </a>
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </Container>
+    </Container >
   );
 
   const guestLinks = (
@@ -77,21 +78,21 @@ const Menubar = (props) => {
       <Navbar color="primary" light expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="navbar" navbar>
             <NavItem>
-              <button color="success" text="fff" size="sm">
-                <NavLink href="/oeas">Resources</NavLink>
-              </button>
+              <Button color="success" text="fff" size="lg" block>
+                <Link to="/oeas">Resources</Link>
+              </Button>
             </NavItem>
             <NavItem>
-              <button color="success" size="sm">
-                <NavLink href="/register" >Register</NavLink>
-              </button>
+              <Button color="success" size="lg" block>
+                <Link to="/register" >Register</Link>
+              </Button>
             </NavItem>
             <NavItem>
-              <button color="success" size="sm">
-                <NavLink href="/login">Login</NavLink>
-              </button>
+              <Button color="success" size="lg" block>
+                <Link to="/login">Login</Link>
+              </Button>
             </NavItem>
           </Nav>
         </Collapse>
@@ -103,11 +104,11 @@ const Menubar = (props) => {
     <Container>
       <div className="navbar bg-primary">
         <h1>
-          <NavLink href='/'
+          <Link to='/'
             style={{ textDecoration: 'none' }}
           >
-            <i className='logo fas fa-id-card-alt' /> VacTrack
-          </NavLink>
+            <i className='logo fas fa-id-card-alt' /> VacTRACK
+          </Link>
         </h1>
         <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
       </div>

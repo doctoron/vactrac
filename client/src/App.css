@@ -65,7 +65,6 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  /* width: 100vw; */
   height: 100%;
 }
 
@@ -155,7 +154,7 @@ img {
 
 .card {
   padding: 0rem;
-  border: #8d8fff 1rem 1.5rem 2.5rem 1rem dotted;
+  border: #8d8fff 1rem 1.5rem 2.5rem 1px;
   margin: 0.0rem 0rem 0rem 0rem;
   width: 100vw;
 }
@@ -451,9 +450,8 @@ table th {
   padding: 0.7rem 1.0rem;
   z-index: 1;
   width: 100%;
-  border-bottom: solid 1px var(--primary-color);
+  /* border-bottom: solid 1px var(--primary-color); */
   opacity: 0.9;
-  margin-bottom: 1rem;
   text-decoration: none;
 }
 
