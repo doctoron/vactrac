@@ -112,7 +112,7 @@ const Menubar = (props) => {
         <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
       </div>
       <div>
-        <Button color="danger" size="lg" block href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" target="_blank" rel="noopener noreferrer"><h4>COVID-19 Updates & Alerts</h4></Button>
+        <Button color="danger" size="lg" block href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank" rel="noopener noreferrer"><h4>COVID-19 Updates & Alerts</h4></Button>
       </div>
     </Container>
 

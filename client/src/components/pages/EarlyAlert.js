@@ -22,18 +22,6 @@ const EarlyAlert = () => {
         <NavItem>
           <Card color="warning" size="lg" >
             <NavLink href=
-              "https://lcgis.maps.arcgis.com/apps/opsdashboard/index.html#/afd94ce1e24746229bdd75e4418aaa19"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3>USA Impact: Florida Situation & Map </h3>
-            </NavLink>
-          </Card>
-        </NavItem>
-
-        <NavItem>
-          <Card color="warning" size="lg" >
-            <NavLink href=
               "https://www.cdc.gov/"
               target="_blank"
               rel="noopener noreferrer"
