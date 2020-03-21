@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.716b55f4.chunk.css",
+    "main.js": "/static/js/main.6b408e18.chunk.js",
+    "main.js.map": "/static/js/main.6b408e18.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.844668cf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.844668cf.js.map",
+    "static/css/2.67123b20.chunk.css": "/static/css/2.67123b20.chunk.css",
+    "static/js/2.cbeb9595.chunk.js": "/static/js/2.cbeb9595.chunk.js",
+    "static/js/2.cbeb9595.chunk.js.map": "/static/js/2.cbeb9595.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b554db93b466fccf0224aff2bb2a45ba.js": "/precache-manifest.b554db93b466fccf0224aff2bb2a45ba.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.67123b20.chunk.css.map": "/static/css/2.67123b20.chunk.css.map",
+    "static/css/main.716b55f4.chunk.css.map": "/static/css/main.716b55f4.chunk.css.map",
+    "static/js/2.cbeb9595.chunk.js.LICENSE.txt": "/static/js/2.cbeb9595.chunk.js.LICENSE.txt",
+    "static/media/adult-celebrate2.jpg": "/static/media/adult-celebrate2.5e547cf0.jpg",
+    "static/media/puzzle12.jpg": "/static/media/puzzle12.9378bb5d.jpg",
+    "static/media/roundAbout2-Logo.jpg": "/static/media/roundAbout2-Logo.d70dc6f4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.844668cf.js",
+    "static/css/2.67123b20.chunk.css",
+    "static/js/2.cbeb9595.chunk.js",
+    "static/css/main.716b55f4.chunk.css",
+    "static/js/main.6b408e18.chunk.js"
+  ]
+}

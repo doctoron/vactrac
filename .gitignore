@@ -1,12 +1,13 @@
 node_modules/
 
+/config/default.json
+/config/production.json
 .env
 
 _redirects
 
 .env
 
-/client/build
 
 .DS_Store
 /client/.env.local
