@@ -21,9 +21,10 @@ const Menubar = (props) => {
   const vaccineContext = useContext(VaccineContext);
   const { clearVaccines } = vaccineContext;
 
-  const toggle = () => setIsOpen(!isOpen);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggle = () => setCollapsed(!collapsed);
 
   useEffect(() => {
     loadUser();
@@ -38,32 +39,32 @@ const Menubar = (props) => {
   const authLinks = (
     <Container className="authorized">
       <Navbar color="primary" light expand="md">
-        <NavbarToggler onClick={toggle} />
-        <NavbarBrand Link to="/" style={{ textDecoration: 'none' }}
-        >
-          <h4 className="greeting">Greetings {user && user.name}</h4>
-        </NavbarBrand>
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={!collapsed} navbar>
           <Nav className="navbar" navbar>
+            <NavbarBrand link="/" style={{ textDecoration: 'none' }} >
+              <div>
+                <h5 className="greeting">Greetings {user && user.name}</h5>
+              </div>
+            </NavbarBrand>
             <NavItem>
-              <Button size="lg" block>
+              <Button text="fff" size="md" block>
                 <Link to="/oeas">Resources</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button size="lg" block>
+              <Button size="md" block>
                 <Link to="/vaccines">Vaccinations</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button size="lg" block>
+              <Button size="md" block>
                 <Link to="/blog">Blog</Link>
               </Button>
             </NavItem>
             <NavItem>
               <a onClick={onLogout} href="#!">
                 <i className="fas fa-sign-out-alt" />{''}
-                <span className="hide-lg">Logout</span>
+                <span className="hide-md">Logout</span>
               </a>
             </NavItem>
           </Nav>
@@ -75,21 +76,20 @@ const Menubar = (props) => {
   const guestLinks = (
     <Container className="guests">
       <Navbar color="primary" light expand="md">
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={!collapsed} navbar>
           <Nav className="navbar" navbar>
             <NavItem>
-              <Button text="fff" size="lg" block>
+              <Button text="fff" size="md" block>
                 <Link to="/oeas">Resources</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button size="lg" block>
+              <Button size="md" block>
                 <Link to="/register" >Register</Link>
               </Button>
             </NavItem>
             <NavItem>
-              <Button size="lg" block>
+              <Button size="md" block>
                 <Link to="/login">Login</Link>
               </Button>
             </NavItem>
@@ -101,16 +101,16 @@ const Menubar = (props) => {
 
   return (
     <Container>
-      <div className="navbar bg-primary">
-        <h1>
-          <Link to='/'
-            style={{ textDecoration: 'none' }}
-          >
-            <i className='logo fas fa-id-card-alt' /> VacTRACK
-          </Link>
-        </h1>
+      <Navbar color="primary" light expand="md">
+        <NavbarToggler onClick={toggle} />
+        <Link to='/'
+          style={{ textDecoration: 'none' }} >
+          <h2><i className='logo fas fa-id-card-alt' />VacTRACK</h2>
+        </Link>
         <ul> {isAuthenticated ? authLinks : guestLinks} </ul>
-      </div>
+
+      </Navbar>
+
       <div>
         <Button color="danger" size="lg" block href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank" rel="noopener noreferrer"><h4>COVID-19 Updates & Alerts</h4></Button>
       </div>

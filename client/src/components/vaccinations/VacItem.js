@@ -24,7 +24,7 @@ const VacItem = ({ vaccine }) => {
     <Container>
       <Row>
         <Col xs="auto">
-          < div className='card bg-light' >
+          < Container className="vaccine-item card bg-light" >
             <h3 className="text-primary text-left">
               {vaccineName}{' '}
               <span
@@ -51,7 +51,7 @@ const VacItem = ({ vaccine }) => {
               <button className="btn btn-dark btn-sm" onClick={() => setCurrent(vaccine)}>Edit</button>
               <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
             </p>
-          </div >
+          </Container >
         </Col>
       </Row>
     </Container>

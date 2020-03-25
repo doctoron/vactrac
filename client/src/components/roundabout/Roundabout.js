@@ -82,8 +82,8 @@ const RoundAbout = (props) => {
                 width: 100%;
                 background: black;
                 opacity: 0.9;
-                margin: 2rem 5rem
-                padding: 3rem 2rem 3rem 2rem;
+                margin: 1rem 4rem
+                padding: 2rem 2rem 2rem 2rem;
               }
               .carousel-caption h3 {
                 color: #20c997;

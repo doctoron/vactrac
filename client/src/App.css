@@ -45,13 +45,23 @@ img {
   width: 100%;
 }
 
+.text-info {
+  width: 100vw;
+  text-align: center;
+}
+
 /* Utilities */
 
 .container {
   max-width: 100vw;
-  margin: 0.1 0 0 0px;
-  overflow: hidden;
-  padding: 0 0px;
+  margin: 1 0.5 1rem 0.5;
+  padding: 0 5px;
+  overflow: visible;
+}
+
+.vaccine-item {
+  max-width: inherit;
+  padding: 1px 5px;
 }
 
 .iframe-container {
@@ -157,15 +167,26 @@ img {
 .card {
   padding: 0rem;
   border: #8d8fff 1rem 1.5rem 2.5rem 1px;
-  margin: 0.0rem 0rem 0rem 0rem;
+  margin: 0.25rem 1rem 0 0rem;
+  width: 100%;
+}
+
+.video-title {
   width: 100vw;
+  text-align: center;
 }
 
 /* Early Alerts */
 
 .card>.Button>.a {
   text-decoration: none;
+  width: 100vw;
   color: #241414;
+}
+
+.early-alerts {
+  width: 100vw;
+  align-items: center;
 }
 
 /* Liblt */
@@ -446,26 +467,46 @@ table th {
 
 /* Navbar */
 
-.navbar {
+.navbar .navbar .container, .navbar .container-fluid, .navbar .contaer-lg, .navbar .container-md, .navbar .container-sm, .navbar .container-xl {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 1.0rem;
-  z-index: 1;
   width: 100%;
-  /* border-bottom: solid 1px var(--primary-color); */
+  flex-wrap: nowrap;
+  align-items: left;
+  justify-content: space-between;
+  position: relative;
+  padding: 1 0.5 1 0.5rem;
+  z-index: 1;
   opacity: 0.9;
   text-decoration: none;
+  /* border-bottom: solid 1px var(--primary-color); */
 }
 
 .navbar ul {
-  display: flex;
+  width: 100%;
+  padding: 0 0 0 0.5rem;
+  align-items: right;
+  position: relative;
+  display: inline-flex;
 }
 
 .navbar a {
   color: var(--light-color);
-  padding: 0.45rem;
-  margin: 0 0.25rem;
+  width: 100%;
+  padding: 0.5 0 0 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.navbar-toggler {
+  float: none;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  padding: 1rem .5rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  background-color: #0000;
+  display: inline-block;
+  /* border: 1px solid #0000; */
+  /* border-radius: .25rem; */
 }
 
 .navbar a:hover {
@@ -474,7 +515,7 @@ table th {
 }
 
 .navbar .welcome span {
-  margin-right: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 /* Footer */
@@ -514,6 +555,10 @@ table th {
   }
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
+  }
+  /* Vaccine Items */
+  .vaccine-item {
+    width: 100%
   }
   /* Text Styles */
   .x-large {

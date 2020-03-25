@@ -15,9 +15,6 @@ const Cards = (props) => {
         <h3 className="text-info">{videoTitle}</h3>
         <Video />
       </Card>
-
-      {/* <Button color="danger" size="lg" block href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" target="_blank" rel="noopener noreferrer"><h4>COVID-19 Updates & Alerts</h4></Button> */}
-
     </Container>
   );
 };
