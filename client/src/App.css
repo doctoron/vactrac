@@ -186,7 +186,8 @@ img {
 
 .early-alerts {
   width: 100vw;
-  align-items: center;
+  text-align: center;
+  display: inline-block;
 }
 
 /* Liblt */
@@ -558,7 +559,9 @@ table th {
   }
   /* Vaccine Items */
   .vaccine-item {
-    width: 100%
+    width: 100%;
+    text-align: left;
+    display: inline-block;
   }
   /* Text Styles */
   .x-large {

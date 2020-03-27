@@ -19,7 +19,7 @@ const Home = () => {
       </Container>
       <Container>
         <Row>
-          <Col sm="auto"><Cards /></Col>
+          <Col lg="auto"><Cards /></Col>
         </Row>
       </Container>
     </Fragment>

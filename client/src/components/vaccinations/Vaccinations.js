@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Container, Col, Row } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import VacItem from './VacItem';
@@ -20,39 +20,37 @@ const Vaccinations = () => {
   }
 
   return (
-    <Fragment>
-      <Container>
-        <Row>
-          <Col>
-            {vaccines != null && !loading ? (
-              <TransitionGroup>
-                {filtered !== null
-                  ? filtered.map(vaccine => (
-                    <CSSTransition
-                      key={vaccine._id}
-                      timeout={500}
-                      classNames="item"
-                    >
-                      <VacItem vaccine={vaccine} />
-                    </CSSTransition>
-                  ))
-                  : vaccines.map(vaccine => (
-                    <CSSTransition
-                      key={vaccine._id}
-                      timeout={500}
-                      classNames="item"
-                    >
-                      <VacItem vaccine={vaccine} />
-                    </CSSTransition>
-                  ))}
-              </TransitionGroup>
-            ) : (
-                <Spinner />
-              )}
-          </Col>
-        </Row>
-      </Container>
-    </Fragment>
+    <Container fluid>
+      <Row>
+        <Col lg="12">
+          {vaccines != null && !loading ? (
+            <TransitionGroup>
+              {filtered !== null
+                ? filtered.map(vaccine => (
+                  <CSSTransition
+                    key={vaccine._id}
+                    timeout={500}
+                    classNames="item"
+                  >
+                    <VacItem vaccine={vaccine} />
+                  </CSSTransition>
+                ))
+                : vaccines.map(vaccine => (
+                  <CSSTransition
+                    key={vaccine._id}
+                    timeout={500}
+                    classNames="item"
+                  >
+                    <VacItem vaccine={vaccine} />
+                  </CSSTransition>
+                ))}
+            </TransitionGroup>
+          ) : (
+              <Spinner />
+            )}
+        </Col>
+      </Row>
+    </Container>
   )
 };
 

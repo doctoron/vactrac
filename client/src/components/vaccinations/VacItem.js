@@ -23,7 +23,7 @@ const VacItem = ({ vaccine }) => {
   return (
     <Container>
       <Row>
-        <Col xs="auto">
+        <Col lg="auto">
           < Container className="vaccine-item card bg-light" >
             <h3 className="text-primary text-left">
               {vaccineName}{' '}

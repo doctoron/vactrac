@@ -4,10 +4,8 @@ import { Card, Nav, NavItem, NavLink, Container } from 'reactstrap';
 const EarlyAlert = () => {
   return (
     <Container className="early-alerts">
-      {/* <h1 className="text-center py-3">Covid19 Updates</h1> */}
-      {/* <ul className="card resource"> */}
       <Nav>
-        <ul className="px-5">
+        <ul className="early-alerts px-5">
           <li>
             <NavItem>
               <Card color="warning" size="lg">

@@ -59,8 +59,7 @@ const VacForm = () => {
   return (
     <Container>
       <Row>
-        <Col>
-
+        <Col lg="12">
           <Form onSubmit={onSubmit}>
             <FormGroup>
               <FormText><h3 className="text-primary">
