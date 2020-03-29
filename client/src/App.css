@@ -168,7 +168,11 @@ img {
   padding: 0rem;
   border: #8d8fff 1rem 1.5rem 2.5rem 1px;
   margin: 0.25rem 1rem 0 0rem;
-  width: 100%;
+  background-size: contain;
+}
+
+.vaccine-item {
+  width: 33vw;
 }
 
 .video-title {
@@ -303,7 +307,6 @@ img {
   background: var(--light-color);
   color: #333;
   padding: 0.4rem 1.3rem;
-  font-size: 1rem;
   border: none;
   cursor: pointer;
   margin-right: .5rem;
@@ -321,6 +324,7 @@ img {
 .btn-block {
   display: block;
   width: 100%;
+  height: 3.75rem;
 }
 
 .btn-sm {
@@ -446,6 +450,7 @@ table th {
 /* Radio Buttons */
 
 .radio-container {
+  display: inline-flex;
   box-sizing: border-box;
   font-family: ‘Open Sans’, sans-serif;
   font-size: 13px;
