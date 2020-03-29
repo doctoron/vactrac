@@ -40,10 +40,12 @@ const VacItem = ({ vaccine }) => {
             </h3>
             <ul className="list">
               {dateReceived && (<li >
-                <i className="fas fa-syringe syringe"></i> {dateReceived}
+                <i className="fas fa-syringe syringe"></i>
+                Date Received: {dateReceived.substring(0, 10)}
               </li>)}
               {dateDue && (<li>
-                <i className="fas fa-syringe syringe"></i> {dateDue}
+                <i className="fas fa-syringe syringe"></i>
+                Date Due: {dateDue.substring(0, 10)}
               </li>)}
             </ul>
             <p>

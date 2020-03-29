@@ -56,6 +56,7 @@ const VacForm = () => {
     clearCurrent();
   };
 
+
   return (
     <Container>
       <Row>
@@ -79,7 +80,7 @@ const VacForm = () => {
                 type="date"
                 placeholder="Date Received"
                 name="dateReceived"
-                value={dateReceived}
+                value={dateReceived.substring(0, 10)}
                 onChange={onChange}
               />
               <Label for="dateDue">Date Due</Label>
@@ -87,7 +88,7 @@ const VacForm = () => {
                 type="date"
                 placeholder="Date Due"
                 name="dateDue"
-                value={dateDue}
+                value={dateDue.substring(0, 10)}
                 onChange={onChange}
               />
               <div className="radio-container">
