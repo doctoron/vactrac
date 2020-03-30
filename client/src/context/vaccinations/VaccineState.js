@@ -151,7 +151,7 @@ const VaccineState = props => {
         filterVaccines,
         clearFilter,
         getVaccines,
-        clearVaccines
+        clearVaccines,
       }}
     >
       {props.children}

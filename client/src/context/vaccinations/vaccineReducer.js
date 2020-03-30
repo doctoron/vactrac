@@ -64,7 +64,9 @@ export default (state, action) => {
         ...state,
         filtered: state.vaccines.filter(vaccine => {
           const regex = new RegExp(`${action.payload}`, 'gi')
-          return vaccine.vaccineName.match(regex) || vaccine.dateReceived.match(regex);
+          return vaccine.vaccineName.match(regex) ||
+            vaccine.dateReceived.match(regex) ||
+            vaccine.dateScheduled.match(regex);
         })
       };
     case CLEAR_FILTER:

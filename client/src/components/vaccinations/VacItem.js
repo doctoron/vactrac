@@ -12,7 +12,7 @@ const VacItem = ({ vaccine }) => {
   const vaccineContext = useContext(VaccineContext);
   const { deleteVaccine, setCurrent, clearCurrent } = vaccineContext;
 
-  const { _id, vaccineName, dateDue, dateReceived, type } = vaccine;
+  const { _id, vaccineName, dateScheduled, dateReceived, type } = vaccine;
 
   const onDelete = () => {
     deleteVaccine(_id);
@@ -35,18 +35,20 @@ const VacItem = ({ vaccine }) => {
                   (type === 'received' ? 'badge-success' : 'badge-primary')
                 }
               >
-                {/* Take first character to uppercase */}
+                {/* Take first character of vaccine name to uppercase */}
                 {type.charAt(0).toUpperCase() + type.slice(1)}
               </span>
             </h3>
             <ul className="list">
               {dateReceived && (<li >
                 <i className="fas fa-syringe syringe"></i>
-                Date Received: {moment(dateReceived).format("MMMM-DD-YYYY")}
+                {/* Date Received: {moment(dateReceived).format("MM/DD/YYYY")} */}
+                Date Received: {dateReceived.substr(0, 10)}
               </li>)}
-              {dateDue && (<li>
+              {dateScheduled && (<li>
                 <i className="fas fa-syringe syringe"></i>
-                Date Due: {moment(dateDue).format("MMMM-DD-YYYY")}
+                {/* Date Scheduled: {moment(dateScheduled).format("MM/DD/YYYY")} */}
+                Date Scheduled: {dateScheduled.substr(0, 10)}
               </li>)}
             </ul>
             <p>

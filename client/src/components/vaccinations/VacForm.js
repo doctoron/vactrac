@@ -22,8 +22,8 @@ const VacForm = () => {
     } else {
       setVaccine({
         vaccineName: '',
-        dateDue: '',
         dateReceived: '',
+        dateScheduled: '',
         type: 'scheduled'
       });
     }
@@ -31,15 +31,18 @@ const VacForm = () => {
 
   const [vaccine, setVaccine] = useState({
     vaccineName: '',
-    dateDue: '',
     dateReceived: '',
+    dateScheduled: '',
     type: 'scheduled'
   });
 
-  const { vaccineName, dateDue, dateReceived, type } = vaccine;
+  const { vaccineName, dateScheduled, dateReceived, type } = vaccine;
 
   const onChange = e =>
-    setVaccine({ ...vaccine, [e.target.name]: e.target.value });
+    setVaccine({
+      ...vaccine,
+      [e.target.name]: e.target.value
+    });
 
   const onSubmit = e => {
     e.preventDefault();
@@ -54,7 +57,9 @@ const VacForm = () => {
     clearCurrent();
   };
 
+
   return (
+
     <Container>
       <Form onSubmit={onSubmit}>
         <FormGroup>
@@ -66,7 +71,7 @@ const VacForm = () => {
             <Input
               id="vaccineName"
               type="text"
-              placeholder="Vaccine"
+              placeholder="Name of Vaccine"
               name="vaccineName"
               value={vaccineName}
               onChange={onChange}
@@ -79,7 +84,6 @@ const VacForm = () => {
             Date Received
             <Input
               type="date"
-              placeholder="Date Received"
               name="dateReceived"
               value={dateReceived}
               onChange={onChange}
@@ -88,26 +92,26 @@ const VacForm = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label for="dateDue">
-            Date Due
+          <Label for="dateScheduled">
+            Date Scheduled
             <Input
               type="date"
-              placeholder="Date Due"
-              name="dateDue"
-              value={dateDue}
+              name="dateScheduled"
+              value={dateScheduled}
               onChange={onChange}
             />
           </Label>
         </FormGroup>
 
         <div className="radio-container">
-          <FormGroup>
-            <h5 className="t-c">Vaccination Received or Scheduled ?</h5>
+          <h5 className="t-c">Vaccination Scheduled or Received ?</h5>
+          <FormGroup >
             <Label check>
               Received
             <Input
                 type="radio"
                 name="type"
+                locale='yyyy-MM-dd'
                 value="received"
                 checked={type === 'received'}
                 onChange={onChange}
@@ -115,21 +119,21 @@ const VacForm = () => {
               {' '}
             </Label>
           </FormGroup>
-        </div>
 
-        <FormGroup>
-          <Label check>
-            Scheduled
+          <FormGroup>
+            <Label check>
+              Scheduled
           <Input
-              type="radio"
-              name="type"
-              value="scheduled"
-              checked={type === 'scheduled'}
-              onChange={onChange}
-            />
-            {' '}
-          </Label>
-        </FormGroup>
+                type="radio"
+                name="type"
+                value="scheduled"
+                checked={type === 'scheduled'}
+                onChange={onChange}
+              />
+              {' '}
+            </Label>
+          </FormGroup>
+        </div>
 
         <FormGroup>
           <br /><br /><br />
