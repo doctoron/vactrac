@@ -54,7 +54,6 @@ const VacForm = () => {
     clearCurrent();
   };
 
-
   return (
     <Container>
       <Form onSubmit={onSubmit}>
@@ -63,6 +62,7 @@ const VacForm = () => {
             {current ? 'Edit Vaccine' : 'Add Vaccine'}
           </h3></FormText>
           <Label for="vaccineName">
+            Vaccine Name
             <Input
               id="vaccineName"
               type="text"
@@ -70,63 +70,65 @@ const VacForm = () => {
               name="vaccineName"
               value={vaccineName}
               onChange={onChange}
-            />Vaccine Name
+            />
           </Label>
         </FormGroup>
 
         <FormGroup>
           <Label for="dateReceived">
+            Date Received
             <Input
               type="date"
               placeholder="Date Received"
               name="dateReceived"
-              value={dateReceived.substring(0, 10)}
+              value={dateReceived}
               onChange={onChange}
-            />Date Received
+            />
           </Label>
         </FormGroup>
 
         <FormGroup>
           <Label for="dateDue">
+            Date Due
             <Input
               type="date"
               placeholder="Date Due"
               name="dateDue"
-              value={dateDue.substring(0, 10)}
+              value={dateDue}
               onChange={onChange}
-            />Date Due
+            />
           </Label>
         </FormGroup>
 
         <div className="radio-container">
           <FormGroup>
-            <h5 className="p-3">Vaccination Received or Scheduled ?</h5>
+            <h5 className="t-c">Vaccination Received or Scheduled ?</h5>
             <Label check>
               Received
-            </Label>
             <Input
-              type="radio"
-              name="type"
-              value="received"
-              checked={type === 'received'}
-              onChange={onChange}
-            />
-            {' '}
+                type="radio"
+                name="type"
+                value="received"
+                checked={type === 'received'}
+                onChange={onChange}
+              />
+              {' '}
+            </Label>
           </FormGroup>
         </div>
 
         <FormGroup>
           <Label check>
             Scheduled
-          </Label>
           <Input
-            type="radio"
-            name="type"
-            value="scheduled"
-            checked={type === 'scheduled'}
-            onChange={onChange}
-          />
-          {' '}
+              type="radio"
+              name="type"
+              value="scheduled"
+              checked={type === 'scheduled'}
+              onChange={onChange}
+            />
+            {' '}
+          </Label>
         </FormGroup>
 
         <FormGroup>
