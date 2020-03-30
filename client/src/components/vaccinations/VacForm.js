@@ -8,9 +8,7 @@ import {
   Label,
   FormText,
   FormGroup,
-  Container,
-  Row,
-  Col
+  Container
 } from 'reactstrap';
 
 const VacForm = () => {
@@ -58,77 +56,96 @@ const VacForm = () => {
 
   return (
     <Container>
-      <Row>
-        <Col lg="12">
-          <Form onSubmit={onSubmit}>
-            <FormGroup>
-              <FormText><h3 className="text-primary">
-                {current ? 'Edit Vaccine' : 'Add Vaccine'}
-              </h3></FormText>
-              <Label for="vaccineName">Vaccine</Label>
-              <Input
-                id="vaccineName"
-                type="text"
-                placeholder="Vaccine"
-                name="vaccineName"
-                value={vaccineName}
-                onChange={onChange}
-              />
-              <Label for="dateReceived">Date Received</Label>
-              <Input
-                type="date"
-                placeholder="Date Received"
-                name="dateReceived"
-                value={dateReceived}
-                onChange={onChange}
-              />
-              <Label for="dateDue">Date Due</Label>
-              <Input
-                type="date"
-                placeholder="Date Due"
-                name="dateDue"
-                value={dateDue}
-                onChange={onChange}
-              />
-              <div className="radio-container">
-                <Label for="type">Record of Received or Scheduled Vaccination?</Label>
-                <br />
-                <Input
-                  type="radio"
-                  name="type"
-                  value="received"
-                  checked=
-                  {type === 'received'}
-                  onChange={onChange}
-                /> {' '}
-          Received {' '}
-                <Input
-                  type="radio"
-                  name="type"
-                  value="scheduled"
-                  checked=
-                  {type === 'scheduled'}
-                  onChange={onChange}
-                /> {' '}
-          Scheduled
-          </div>
-              <br /><br />
+      <Form onSubmit={onSubmit}>
+        <FormGroup>
+          <FormText><h3 className="text-primary">
+            {current ? 'Edit Vaccine' : 'Add Vaccine'}
+          </h3></FormText>
+          <Label for="vaccineName">
+            Vaccine Name
+            <Input
+              id="vaccineName"
+              type="text"
+              placeholder="Vaccine"
+              name="vaccineName"
+              value={vaccineName}
+              onChange={onChange}
+            />
+          </Label>
+        </FormGroup>
 
-              <Input
-                type="submit"
-                value={current ? 'Update Vaccination' : 'Add Vaccination'}
-                className="btn btn-primary btn-block"
+        <FormGroup>
+          <Label for="dateReceived">
+            Date Received
+            <Input
+              type="date"
+              placeholder="Date Received"
+              name="dateReceived"
+              value={dateReceived}
+              onChange={onChange}
+            />
+          </Label>
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="dateDue">
+            Date Due
+            <Input
+              type="date"
+              placeholder="Date Due"
+              name="dateDue"
+              value={dateDue}
+              onChange={onChange}
+            />
+          </Label>
+        </FormGroup>
+
+        <div className="radio-container">
+          <FormGroup>
+            <h5 className="t-c">Vaccination Received or Scheduled ?</h5>
+            <Label check>
+              Received
+            <Input
+                type="radio"
+                name="type"
+                value="received"
+                checked={type === 'received'}
+                onChange={onChange}
               />
-              {current && (
-                <Button className="btn-block" onClick={clearAll}>
-                  Clear
-                </Button>
-              )}
-            </FormGroup>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+              {' '}
+            </Label>
+          </FormGroup>
+        </div>
+
+        <FormGroup>
+          <Label check>
+            Scheduled
+          <Input
+              type="radio"
+              name="type"
+              value="scheduled"
+              checked={type === 'scheduled'}
+              onChange={onChange}
+            />
+            {' '}
+          </Label>
+        </FormGroup>
+
+        <FormGroup>
+          <br /><br /><br />
+          <Input
+            type="submit"
+            value={current ? 'Update Vaccination' : 'Add Vaccination'}
+            className="btn btn-primary btn-block"
+          />
+          {current && (
+            <Button size="lg" className="btn-block" onClick={clearAll}>
+              Clear
+            </Button>
+          )}
+        </FormGroup>
+      </Form>
+    </Container >
   );
 }
 export default VacForm;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import moment from 'moment';
 import {
   Container,
   Row,
@@ -40,10 +41,12 @@ const VacItem = ({ vaccine }) => {
             </h3>
             <ul className="list">
               {dateReceived && (<li >
-                <i className="fas fa-syringe syringe"></i> {dateReceived}
+                <i className="fas fa-syringe syringe"></i>
+                Date Received: {moment(dateReceived).format("MMMM-DD-YYYY")}
               </li>)}
               {dateDue && (<li>
-                <i className="fas fa-syringe syringe"></i> {dateDue}
+                <i className="fas fa-syringe syringe"></i>
+                Date Due: {moment(dateDue).format("MMMM-DD-YYYY")}
               </li>)}
             </ul>
             <p>
