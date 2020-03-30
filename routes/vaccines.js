@@ -37,13 +37,13 @@ router.post('/',
       return res.status(422).json({ errors: errors.array() });
     }
 
-    const { vaccineName, dateDue, dateReceived, type } = req.body;
+    const { vaccineName, dateScheduled, dateReceived, type } = req.body;
 
     try {
       const newVaccine = new Vaccine({
         vaccineName,
         dateReceived,
-        dateDue,
+        dateScheduled,
         type,
         user: req.user.id
       });
@@ -62,12 +62,12 @@ router.post('/',
 // @desc      Update contact
 // @access    Private
 router.put('/:id', auth, async (req, res) => {
-  const { vaccineName, dateDue, dateReceived, type } = req.body;
+  const { vaccineName, dateScheduled, dateReceived, type } = req.body;
 
   // Build vaccine object based on submitted data
   const vaccineFields = {};
   if (vaccineName) vaccineFields.vaccineName = vaccineName;
-  if (dateDue) vaccineFields.dateDue = dateDue;
+  if (dateScheduled) vaccineFields.dateScheduled = dateScheduled;
   if (dateReceived) vaccineFields.dateReceived = dateReceived;
   if (type) vaccineFields.type = type;
 

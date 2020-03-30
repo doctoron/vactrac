@@ -9,7 +9,7 @@ const VaccinesSchema = mongoose.Schema({
     type: String,
     required: [true, 'Would you like to search the MyVac list?']
   },
-  dateDue: {
+  dateScheduled: {
     type: Date,
     default: Date.now
   },
